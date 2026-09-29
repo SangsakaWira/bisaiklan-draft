@@ -1,14 +1,14 @@
 /* Balikos demo — semua data di bawah adalah CONTOH, bukan listing aktual. */
 const KOS = [
-  { id: 'renon-a', nama: 'Kos Contoh Renon A', area: 'Denpasar', lokasi: 'Renon, Denpasar', dekat: ['Universitas Udayana (Sudirman)', 'Renon'], tipe: 'putri', kisaran: 'menengah', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir motor'], art: '' },
-  { id: 'panjer-b', nama: 'Kos Contoh Panjer B', area: 'Denpasar', lokasi: 'Panjer, Denpasar', dekat: ['Universitas Warmadewa', 'Panjer'], tipe: 'putra', kisaran: 'hemat', fasilitas: ['Kipas angin', 'WiFi', 'Parkir motor', 'Dapur bersama'], art: 'v2' },
-  { id: 'isi-c', nama: 'Kos Contoh Nusa Indah C', area: 'Denpasar', lokasi: 'Denpasar Timur', dekat: ['ISI Denpasar'], tipe: 'campur', kisaran: 'hemat', fasilitas: ['Kamar mandi dalam', 'WiFi', 'Parkir motor'], art: 'v3' },
-  { id: 'jimbaran-a', nama: 'Kos Contoh Bukit A', area: 'Jimbaran', lokasi: 'Jimbaran, Badung', dekat: ['Universitas Udayana (Jimbaran)', 'Politeknik Negeri Bali'], tipe: 'putra', kisaran: 'hemat', fasilitas: ['Kamar mandi dalam', 'WiFi', 'Parkir motor'], art: 'v3' },
-  { id: 'jimbaran-b', nama: 'Kos Contoh Bukit B', area: 'Jimbaran', lokasi: 'Jimbaran, Badung', dekat: ['Universitas Udayana (Jimbaran)'], tipe: 'putri', kisaran: 'menengah', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir motor', 'Dapur bersama'], art: '' },
-  { id: 'kuta-a', nama: 'Kos Contoh Kuta A', area: 'Kuta', lokasi: 'Kuta, Badung', dekat: ['Kuta'], tipe: 'campur', kisaran: 'lengkap', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir mobil', 'Parkir motor', 'Laundry'], art: 'v2' },
-  { id: 'kuta-b', nama: 'Kos Contoh Legian B', area: 'Kuta', lokasi: 'Legian, Badung', dekat: ['Legian', 'Kuta'], tipe: 'campur', kisaran: 'menengah', fasilitas: ['AC', 'WiFi', 'Parkir motor'], art: '' },
-  { id: 'canggu-a', nama: 'Kos Contoh Canggu A', area: 'Canggu', lokasi: 'Canggu, Badung', dekat: ['Canggu', 'Berawa'], tipe: 'campur', kisaran: 'lengkap', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir motor', 'Meja kerja', 'Laundry'], art: 'v3' },
-  { id: 'ubud-a', nama: 'Kos Contoh Ubud A', area: 'Ubud', lokasi: 'Ubud, Gianyar', dekat: ['Ubud'], tipe: 'campur', kisaran: 'menengah', fasilitas: ['Kamar mandi dalam', 'WiFi', 'Parkir motor', 'Meja kerja'], art: 'v2' },
+  { id: 'renon-a', nama: 'Kos Contoh Renon A', area: 'Denpasar', lokasi: 'Renon, Denpasar', dekat: ['Universitas Udayana (Sudirman)', 'Renon'], tipe: 'putri', kisaran: 'menengah', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir motor'], foto: 'kamar-3', galeri: ['kamar-3', 'kamar-2', 'km-1'] },
+  { id: 'panjer-b', nama: 'Kos Contoh Panjer B', area: 'Denpasar', lokasi: 'Panjer, Denpasar', dekat: ['Universitas Warmadewa', 'Panjer'], tipe: 'putra', kisaran: 'hemat', fasilitas: ['Kipas angin', 'WiFi', 'Parkir motor', 'Dapur bersama'], foto: 'kamar-10', galeri: ['kamar-10', 'kamar-11', 'km-2'] },
+  { id: 'isi-c', nama: 'Kos Contoh Nusa Indah C', area: 'Denpasar', lokasi: 'Denpasar Timur', dekat: ['ISI Denpasar'], tipe: 'campur', kisaran: 'hemat', fasilitas: ['Kamar mandi dalam', 'WiFi', 'Parkir motor'], foto: 'kamar-5', galeri: ['kamar-5', 'kamar-2', 'km-3'] },
+  { id: 'jimbaran-a', nama: 'Kos Contoh Bukit A', area: 'Jimbaran', lokasi: 'Jimbaran, Badung', dekat: ['Universitas Udayana (Jimbaran)', 'Politeknik Negeri Bali'], tipe: 'putra', kisaran: 'hemat', fasilitas: ['Kamar mandi dalam', 'WiFi', 'Parkir motor'], foto: 'kamar-6', galeri: ['kamar-6', 'kamar-11', 'km-1'] },
+  { id: 'jimbaran-b', nama: 'Kos Contoh Bukit B', area: 'Jimbaran', lokasi: 'Jimbaran, Badung', dekat: ['Universitas Udayana (Jimbaran)'], tipe: 'putri', kisaran: 'menengah', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir motor', 'Dapur bersama'], foto: 'kamar-1', galeri: ['kamar-1', 'kamar-2', 'km-2'] },
+  { id: 'kuta-a', nama: 'Kos Contoh Kuta A', area: 'Kuta', lokasi: 'Kuta, Badung', dekat: ['Kuta'], tipe: 'campur', kisaran: 'lengkap', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir mobil', 'Parkir motor', 'Laundry'], foto: 'kamar-8', galeri: ['kamar-8', 'kamar-11', 'km-3'] },
+  { id: 'kuta-b', nama: 'Kos Contoh Legian B', area: 'Kuta', lokasi: 'Legian, Badung', dekat: ['Legian', 'Kuta'], tipe: 'campur', kisaran: 'menengah', fasilitas: ['AC', 'WiFi', 'Parkir motor'], foto: 'kamar-7', galeri: ['kamar-7', 'kamar-2', 'km-1'] },
+  { id: 'canggu-a', nama: 'Kos Contoh Canggu A', area: 'Canggu', lokasi: 'Canggu, Badung', dekat: ['Canggu', 'Berawa'], tipe: 'campur', kisaran: 'lengkap', fasilitas: ['AC', 'Kamar mandi dalam', 'WiFi', 'Parkir motor', 'Meja kerja', 'Laundry'], foto: 'kamar-4', galeri: ['kamar-4', 'kamar-11', 'km-2'] },
+  { id: 'ubud-a', nama: 'Kos Contoh Ubud A', area: 'Ubud', lokasi: 'Ubud, Gianyar', dekat: ['Ubud'], tipe: 'campur', kisaran: 'menengah', fasilitas: ['Kamar mandi dalam', 'WiFi', 'Parkir motor', 'Meja kerja'], foto: 'kamar-9', galeri: ['kamar-9', 'kamar-2', 'km-3'] },
 ];
 
 const TIPE_LABEL = { putra: 'Putra', putri: 'Putri', campur: 'Campur' };
@@ -25,7 +25,7 @@ const PIN = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke=
 
 function kosCard(k) {
   return `<article class="kos-card">
-    <div class="arch-art ${k.art}"><span class="art-label">Ilustrasi</span></div>
+    <div class="photo"><img src="${BASE}assets/foto/${k.foto}.jpg" alt="Foto kamar ${esc(k.nama)}" loading="lazy" width="1000" height="750"></div>
     <div class="kos-body">
       <div class="kos-meta"><span class="tag ${k.tipe}">${TIPE_LABEL[k.tipe]}</span><span class="small muted">Contoh</span></div>
       <h3><a href="${BASE}kos/?id=${encodeURIComponent(k.id)}">${esc(k.nama)}</a></h3>
@@ -123,9 +123,11 @@ if (detail) {
     else if (key === 'fasilitas') el.innerHTML = k.fasilitas.map(f => `<li>${esc(f)}</li>`).join('');
     else el.textContent = k[key];
   });
-  const arts = detail.querySelectorAll('.gallery .arch-art');
-  const order = [k.art, ...['', 'v2', 'v3'].filter(v => v !== k.art)];
-  arts.forEach((a, i) => { if (order[i]) a.classList.add(order[i]); });
+  const labels = ['Kamar', 'Sudut kamar', 'Kamar mandi'];
+  detail.querySelectorAll('.gallery img').forEach((img, i) => {
+    img.src = `${BASE}assets/foto/${k.galeri[i]}.jpg`;
+    img.alt = `${labels[i]}, ${k.nama}`;
+  });
   const others = KOS.filter(x => x.area === k.area && x.id !== k.id).concat(KOS.filter(x => x.area !== k.area)).slice(0, 3);
   document.getElementById('similar').innerHTML = others.map(kosCard).join('');
 }
