@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detail kos — Balikos.com (demo)</title>
+  <meta name="description" content="Detail kos contoh di Balikos.com. Situs demo.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke konten</a>
+<div class="demo-bar"><strong>Situs demo.</strong> Kos ini adalah contoh, bukan listing aktual.</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-link" href="../" aria-label="Balikos.com, beranda"><img src="../assets/logo.png" alt="balikos" width="150" height="54"></a>
+    <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Buka menu">☰</button>
+    <nav class="nav" id="nav" aria-label="Menu utama">
+      <a href="../cari/">Cari kos</a>
+      <a href="../#area">Area</a>
+      <a href="../#cara">Cara kerja</a>
+      <a href="../#faq">FAQ</a>
+      <a class="btn btn-outline" href="../pemilik/">Daftarkan kos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <div id="detail">
+    <p class="breadcrumb"><a href="../">Beranda</a> / <a href="../cari/">Cari kos</a> / <span data-k="area"></span></p>
+
+    <div class="gallery" aria-label="Galeri ilustrasi">
+      <div class="arch-art"><span class="art-label">Ilustrasi</span></div>
+      <div class="arch-art"><span class="art-label">Ilustrasi</span></div>
+      <div class="arch-art"><span class="art-label">Ilustrasi</span></div>
+    </div>
+
+    <div class="detail-layout">
+      <div>
+        <div class="kos-meta" style="margin-bottom:.5rem"><span data-k="tipe"></span><span class="sample-note">Contoh — bukan listing aktual</span></div>
+        <h1 style="font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem)" data-k="nama">Nama kos (contoh)</h1>
+        <p class="kos-loc" style="font-size:1rem">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span data-k="lokasi"></span>
+        </p>
+        <p class="muted small">Dekat: <span data-k="dekat"></span>. Alamat lengkap diberikan oleh pemilik.</p>
+
+        <div class="detail-block">
+          <h2 style="font-size:1.375rem">Fasilitas</h2>
+          <ul class="fac-list" data-k="fasilitas"></ul>
+        </div>
+        <div class="detail-block">
+          <h2 style="font-size:1.375rem">Aturan kos</h2>
+          <p class="muted">Aturan belum dicantumkan. Tanyakan aturan jam tamu, hewan peliharaan, dan lama sewa minimum kepada pemilik.</p>
+        </div>
+        <div class="detail-block">
+          <h2 style="font-size:1.375rem">Tentang kos ini</h2>
+          <p class="muted">Deskripsi akan ditampilkan di sini setelah pemilik melengkapi informasi kos.</p>
+        </div>
+      </div>
+
+      <aside class="contact-card" aria-label="Hubungi pemilik">
+        <p class="price-line">Harga per bulan<strong>Belum dicantumkan</strong></p>
+        <p class="small muted" style="margin:0">Kisaran contoh: <span data-k="kisaran"></span></p>
+        <div class="owner-row">
+          <span class="avatar" aria-hidden="true">P</span>
+          <div><strong>Pemilik kos</strong><br><span class="small muted">Nama pemilik belum tersedia</span></div>
+        </div>
+        <button class="btn btn-primary btn-block" type="button" data-demo-contact="contact-notice">Hubungi pemilik</button>
+        <p class="small muted" style="margin:.75rem 0 0">Tanyakan harga, aturan, dan ketersediaan langsung kepada pemilik.</p>
+        <div class="notice" id="contact-notice" tabindex="-1" role="status" hidden>Kontak pemilik belum tersedia di demo. Nantinya tombol ini membuka WhatsApp pemilik.</div>
+      </aside>
+    </div>
+
+    <section class="section" style="padding-top:1rem">
+      <h2 style="font-size:1.5rem">Kos contoh lainnya</h2>
+      <div class="kos-grid" id="similar" style="margin-top:1.25rem"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer dark">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="../"><img src="../assets/logo.png" alt="balikos" width="130" height="47"></a>
+        <p>Ruang untuk keseharianmu. Cari kos di Bali dengan informasi yang jelas.</p>
+      </div>
+      <div><h4>Cari</h4><ul><li><a href="../cari/?q=Denpasar">Denpasar</a></li><li><a href="../cari/?q=Jimbaran">Jimbaran</a></li><li><a href="../cari/?q=Kuta">Kuta</a></li><li><a href="../cari/?q=Canggu">Canggu</a></li><li><a href="../cari/?q=Ubud">Ubud</a></li></ul></div>
+      <div><h4>Balikos</h4><ul><li><a href="../pemilik/">Untuk pemilik</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../brand/">Brand guideline</a></li></ul></div>
+      <div><h4>Kontak</h4><ul><li>Email: <em>belum tersedia</em></li><li>WhatsApp: <em>belum tersedia</em></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Balikos.com</span><span>Situs demo. Data kos adalah contoh.</span></div>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

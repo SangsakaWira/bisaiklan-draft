@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="id" data-base="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balikos.com — Cari kos di Bali (demo)</title>
+  <meta name="description" content="Cari kos di Bali, mulai dari lokasimu. Lihat fasilitas dan tanyakan ketersediaan langsung kepada pemilik. Situs demo.">
+  <meta property="og:title" content="Balikos.com — Cari kos di Bali">
+  <meta property="og:description" content="Cari kos di Bali, mulai dari lokasimu. Situs demo.">
+  <meta property="og:image" content="https://sangsakawira.github.io/bisaiklan-draft/balikos/assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke konten</a>
+<div class="demo-bar"><strong>Situs demo.</strong> Semua kos di halaman ini adalah contoh, bukan listing aktual.</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-link" href="./" aria-label="Balikos.com, beranda"><img src="assets/logo.png" alt="balikos" width="150" height="54"></a>
+    <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Buka menu">☰</button>
+    <nav class="nav" id="nav" aria-label="Menu utama">
+      <a href="cari/">Cari kos</a>
+      <a href="#area">Area</a>
+      <a href="#cara">Cara kerja</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-outline" href="pemilik/">Daftarkan kos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Kos di Bali</p>
+        <h1>Cari kos di Bali, mulai dari lokasimu.</h1>
+        <p class="lead">Lihat fasilitas dan aturan kos dengan jelas, lalu tanyakan harga dan ketersediaan langsung kepada pemilik.</p>
+
+        <form class="search-card" action="cari/" method="get">
+          <div class="field">
+            <label for="hero-q">Lokasi</label>
+            <div class="input-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <input class="input" id="hero-q" name="q" type="search" placeholder="Masukkan area atau kampus" autocomplete="off">
+            </div>
+          </div>
+          <div class="field">
+            <label for="hero-tipe">Tipe kos</label>
+            <select class="input" id="hero-tipe" name="tipe">
+              <option value="">Semua tipe</option>
+              <option value="putra">Putra</option>
+              <option value="putri">Putri</option>
+              <option value="campur">Campur</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Cari kos</button>
+        </form>
+
+        <div class="chips">
+          <span class="chips-label">Kampus:</span>
+          <a class="chip" href="cari/?q=Udayana">Universitas Udayana</a>
+          <a class="chip" href="cari/?q=Politeknik+Negeri+Bali">Politeknik Negeri Bali</a>
+          <a class="chip" href="cari/?q=ISI+Denpasar">ISI Denpasar</a>
+          <a class="chip" href="cari/?q=Warmadewa">Warmadewa</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="arch-art"><span class="art-label">Ilustrasi</span></div>
+        <div class="arch-art small v2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="area" style="padding-top:1rem">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Area</p>
+          <h2>Mulai dari area yang kamu tuju</h2>
+        </div>
+        <a href="cari/">Lihat semua kos contoh</a>
+      </div>
+      <div class="area-grid">
+        <a class="area-card" href="cari/?q=Denpasar"><div class="arch-art"></div><div class="area-name"><strong>Denpasar</strong><span>Renon, Panjer, dan sekitarnya</span></div></a>
+        <a class="area-card" href="cari/?q=Jimbaran"><div class="arch-art v3"></div><div class="area-name"><strong>Jimbaran</strong><span>Kawasan Bukit</span></div></a>
+        <a class="area-card" href="cari/?q=Kuta"><div class="arch-art v2"></div><div class="area-name"><strong>Kuta</strong><span>Kuta dan Legian</span></div></a>
+        <a class="area-card" href="cari/?q=Canggu"><div class="arch-art"></div><div class="area-name"><strong>Canggu</strong><span>Canggu dan Berawa</span></div></a>
+        <a class="area-card" href="cari/?q=Ubud"><div class="arch-art v3"></div><div class="area-name"><strong>Ubud</strong><span>Gianyar</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--putih)">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Kos pilihan</p>
+          <h2>Contoh tampilan kos</h2>
+          <span class="sample-note">Contoh UI — bukan listing aktual</span>
+        </div>
+        <a class="btn btn-ghost" href="cari/">Lihat semua</a>
+      </div>
+      <div class="kos-grid" id="featured"></div>
+    </div>
+  </section>
+
+  <section class="section" id="cara">
+    <div class="container">
+      <p class="eyebrow">Cara kerja</p>
+      <h2>Tiga langkah menemukan kos</h2>
+      <div class="steps" style="margin-top:2rem">
+        <div class="step"><span class="step-num">1</span><h3>Cari lokasi</h3><p>Masukkan area atau kampus, lalu pilih tipe kos yang kamu butuhkan.</p></div>
+        <div class="step"><span class="step-num">2</span><h3>Bandingkan detail</h3><p>Lihat fasilitas, aturan, dan lokasi umum setiap kos.</p></div>
+        <div class="step"><span class="step-num">3</span><h3>Hubungi pemilik</h3><p>Tanyakan harga, aturan, dan ketersediaan langsung kepada pemilik.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="owner-cta dark">
+        <div>
+          <p class="eyebrow" style="color:var(--pasir)">Untuk pemilik</p>
+          <h2>Punya kos di Bali? Kenalkan tempatmu.</h2>
+          <p>Lengkapi informasi kos agar calon penyewa dapat mempelajarinya sebelum menghubungimu.</p>
+          <a class="btn btn-primary" href="pemilik/">Daftarkan kos</a>
+        </div>
+        <div class="arch-deco" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" style="padding-top:0">
+    <div class="container">
+      <p class="eyebrow">FAQ</p>
+      <h2>Pertanyaan umum</h2>
+      <div class="faq" style="margin-top:1.5rem">
+        <details><summary>Apakah kos di situs ini sudah bisa disewa?</summary><p>Belum. Ini situs demo, dan semua kos yang tampil adalah contoh untuk memperlihatkan tampilan.</p></details>
+        <details><summary>Bagaimana cara mengetahui harga kos?</summary><p>Harga belum dicantumkan di demo. Nantinya kamu bisa menanyakan harga, aturan, dan ketersediaan langsung kepada pemilik.</p></details>
+        <details><summary>Apakah ada biaya untuk mencari kos?</summary><p>Ketentuan biaya layanan belum ditetapkan.</p></details>
+        <details><summary>Saya pemilik kos. Bagaimana cara mendaftar?</summary><p>Isi formulir minat di halaman <a href="pemilik/">Untuk pemilik</a>. Di demo ini formulir belum mengirim data.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer dark">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-logo" href="./"><img src="assets/logo.png" alt="balikos" width="130" height="47"></a>
+        <p>Ruang untuk keseharianmu. Cari kos di Bali dengan informasi yang jelas.</p>
+      </div>
+      <div><h4>Cari</h4><ul><li><a href="cari/?q=Denpasar">Denpasar</a></li><li><a href="cari/?q=Jimbaran">Jimbaran</a></li><li><a href="cari/?q=Kuta">Kuta</a></li><li><a href="cari/?q=Canggu">Canggu</a></li><li><a href="cari/?q=Ubud">Ubud</a></li></ul></div>
+      <div><h4>Balikos</h4><ul><li><a href="pemilik/">Untuk pemilik</a></li><li><a href="#faq">FAQ</a></li><li><a href="brand/">Brand guideline</a></li></ul></div>
+      <div><h4>Kontak</h4><ul><li>Email: <em>belum tersedia</em></li><li>WhatsApp: <em>belum tersedia</em></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Balikos.com</span><span>Situs demo. Data kos adalah contoh.</span></div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

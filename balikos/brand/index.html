@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id" data-base="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand guideline — Balikos.com</title>
+  <meta name="description" content="Brand guideline Balikos.com: logo, warna, tipografi, dan suara brand.">
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Lewati ke konten</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand-link" href="../" aria-label="Balikos.com, beranda"><img src="../assets/logo.png" alt="balikos" width="150" height="54"></a>
+    <button class="nav-toggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Buka menu">☰</button>
+    <nav class="nav" id="nav" aria-label="Menu utama">
+      <a href="#logo">Logo</a>
+      <a href="#warna">Warna</a>
+      <a href="#tipografi">Tipografi</a>
+      <a href="#suara">Suara</a>
+      <a class="btn btn-outline" href="../">Ke situs demo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <section class="section" style="padding-bottom:2rem">
+    <p class="eyebrow">Balikos / Identitas visual</p>
+    <h1>Brand guideline</h1>
+    <p class="lead muted" style="font-size:1.25rem">Ruang untuk keseharianmu. Identitas Balikos memakai simbol pintu terbuka yang menyiratkan huruf b, wordmark huruf kecil, dan warna tanah yang hangat.</p>
+    <p class="small muted">Logo, palet, tipografi, dan suara brand ditentukan oleh Codex. Halaman ini merangkumnya untuk implementasi.</p>
+    <img src="../assets/guideline.jpg" alt="Papan brand guideline Balikos: logo, palet warna, tipografi, contoh kotak pencarian dan kartu kos, serta suara brand" width="1448" height="1086" style="border-radius:14px;border:1px solid var(--garis);margin-top:1.5rem">
+  </section>
+
+  <section class="section" id="logo" style="padding-top:2rem">
+    <h2>Logo</h2>
+    <div class="logo-panels" style="margin-top:1.25rem">
+      <div class="logo-panel" style="background:var(--kapur)"><img src="../assets/logo.png" alt="Logo balikos di latar Kapur" width="260"></div>
+      <div class="logo-panel" style="background:var(--putih)"><img src="../assets/logo-mark.png" alt="Simbol balikos" width="120"></div>
+      <div class="logo-panel on-dark"><div class="plate"><img src="../assets/logo.png" alt="Logo balikos di bidang Kapur pada latar gelap" width="200"></div></div>
+    </div>
+    <ul class="muted" style="margin-top:1.25rem">
+      <li>Di latar Kapur atau Putih, pakai logo langsung. Di latar Tinta atau foto, taruh logo di bidang Kapur dengan padding.</li>
+      <li>Ruang bebas minimal seperempat tinggi simbol. Jangan meregangkan, memutar, memberi bayangan, atau mengetik ulang wordmark.</li>
+      <li>Lebar minimum logo lengkap 160 px. Di bawah itu, pakai simbol (minimum 32 × 32 px).</li>
+    </ul>
+  </section>
+
+  <section class="section" id="warna" style="padding-top:2rem">
+    <h2>Warna</h2>
+    <div class="swatches" style="margin-top:1.25rem">
+      <div class="swatch"><div class="chip-color" style="background:#B84A32"></div><div><code>#B84A32</code><br>Terakota<br><span class="muted">Primary, CTA, tautan</span></div></div>
+      <div class="swatch"><div class="chip-color" style="background:#963922"></div><div><code>#963922</code><br>Terakota pekat<br><span class="muted">Hover CTA</span></div></div>
+      <div class="swatch"><div class="chip-color" style="background:#202B36"></div><div><code>#202B36</code><br>Tinta<br><span class="muted">Judul, teks, latar gelap</span></div></div>
+      <div class="swatch"><div class="chip-color" style="background:#58616A"></div><div><code>#58616A</code><br>Batu<br><span class="muted">Teks sekunder</span></div></div>
+      <div class="swatch"><div class="chip-color" style="background:#FAF7F2;border-bottom:1px solid var(--garis)"></div><div><code>#FAF7F2</code><br>Kapur<br><span class="muted">Latar utama</span></div></div>
+      <div class="swatch"><div class="chip-color" style="background:#E9BE84"></div><div><code>#E9BE84</code><br>Pasir<br><span class="muted">Aksen, panel</span></div></div>
+    </div>
+    <h3 style="margin-top:2rem">Pasangan teks dan latar (WCAG AA)</h3>
+    <div style="overflow-x:auto">
+      <table class="contrast">
+        <thead><tr><th scope="col">Teks</th><th scope="col">Latar</th><th scope="col">Rasio</th><th scope="col">Hasil</th></tr></thead>
+        <tbody>
+          <tr><td>Tinta</td><td>Kapur</td><td>13,46:1</td><td>Lulus</td></tr>
+          <tr><td>Tinta</td><td>Putih</td><td>14,38:1</td><td>Lulus</td></tr>
+          <tr><td>Batu</td><td>Kapur</td><td>5,90:1</td><td>Lulus</td></tr>
+          <tr><td>Putih</td><td>Terakota</td><td>5,17:1</td><td>Lulus</td></tr>
+          <tr><td>Terakota</td><td>Kapur</td><td>4,84:1</td><td>Lulus</td></tr>
+          <tr><td>Putih</td><td>Terakota pekat</td><td>7,23:1</td><td>Lulus</td></tr>
+          <tr><td>Tinta</td><td>Pasir</td><td>8,33:1</td><td>Lulus</td></tr>
+          <tr><td>Terakota</td><td>Tinta</td><td>2,78:1</td><td><strong>Jangan dipakai</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" id="tipografi" style="padding-top:2rem">
+    <h2>Tipografi</h2>
+    <div class="benefits" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:1.25rem">
+      <div class="step"><p class="eyebrow">Heading · 600–700</p><p style="font:700 2rem/1.2 var(--font-heading);letter-spacing:-.02em;color:var(--tinta)">Plus Jakarta Sans</p><p>Cari kos di Bali, mulai dari lokasimu.</p></div>
+      <div class="step"><p class="eyebrow">Body &amp; UI · 400–600</p><p style="font:600 2rem/1.2 var(--font-body);color:var(--tinta)">Inter</p><p>Dipakai untuk isi, label, dan tombol karena jelas dibaca di layar.</p></div>
+    </div>
+    <p class="small muted" style="margin-top:1rem">Skala: H1 48/32 px, H2 36/28 px, H3 24/22 px, isi 16 px, label 14 px (desktop/HP). Sentence case, paragraf maksimal 65 karakter.</p>
+  </section>
+
+  <section class="section" id="suara" style="padding-top:2rem">
+    <h2>Suara brand</h2>
+    <p style="font:700 1.75rem/1.2 var(--font-heading)">Ramah. Jelas. Apa adanya.</p>
+    <p class="muted">Sapaan “kamu”, sudut pandang “kami”. Utamakan langkah yang bisa dilakukan pengguna. Jangan mengarang harga, ketersediaan, statistik, atau ulasan.</p>
+    <div style="overflow-x:auto">
+      <table class="contrast">
+        <thead><tr><th scope="col">Gunakan</th><th scope="col">Hindari</th></tr></thead>
+        <tbody>
+          <tr><td>Cari kos di Bali, mulai dari lokasimu.</td><td>Kos nomor satu dan termurah se-Bali!</td></tr>
+          <tr><td>Tanyakan ketersediaan kamar kepada pemilik.</td><td>Kamar pasti tersedia. Buruan booking!</td></tr>
+          <tr><td>Harga belum dicantumkan. Hubungi pemilik untuk informasi lebih lanjut.</td><td>Harga spesial hanya hari ini!</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer dark">
+  <div class="container">
+    <div class="footer-bottom" style="margin-top:0;border-top:0;padding-top:0"><span>© 2026 Balikos.com</span><a href="../">Kembali ke situs demo</a></div>
+  </div>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>
