@@ -6,6 +6,7 @@ Satu repo untuk semua mockup produk. Setiap produk ada di foldernya sendiri dan 
 | Folder | Produk | Sumber |
 |---|---|---|
 | `balikos/` | Balikos.com, pencarian kos di Bali | `balikos.com/deploy/` |
+| `kertapati/` | kertapatikec-go.id, profil dan layanan Kecamatan Kertapati (draft, bukan situs resmi) | `kertapatikec-go.id/deploy/` |
 
 Semua data di mockup adalah contoh. Jangan masukkan nomor, harga, atau data pribadi asli.
 
