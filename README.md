@@ -6,6 +6,7 @@ Satu repo untuk semua mockup produk. Setiap produk ada di foldernya sendiri dan 
 | Folder | Produk | Sumber |
 |---|---|---|
 | `balikos/` | Balikos.com, pencarian kos di Bali | `balikos.com/deploy/` |
+| `gqsp/` | GQSP Indonesia, revamp gqspindonesia.org (demo, bukan situs resmi; konten publik dari situs klien, bukan contoh) | `gqspindonesia.org/deploy/` |
 | `kertapati/` | kertapatikec-go.id, profil dan layanan Kecamatan Kertapati (draft, bukan situs resmi) | `kertapatikec-go.id/deploy/` |
 | `lingkarsatwa/` | Lingkar Satwa Animal Care, klinik hewan dan pet shop di Surabaya | `lingkarsatwa/deploy/` |
 
