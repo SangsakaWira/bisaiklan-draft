@@ -63,12 +63,14 @@ p{margin:0 0 1em}
 
 /* hero */
 .hero{position:relative;background:var(--white)}
-.hero-img img{width:100%;height:clamp(420px,62vh,640px);object-fit:cover;object-position:center 40%}
-.hero-in{position:relative}
-.hero-panel{background:var(--white);padding:40px;border-radius:var(--r);max-width:620px;margin-top:-180px;position:relative;box-shadow:0 12px 40px rgba(16,42,58,.12);border-top:4px solid var(--brand)}
+.hero-img img{width:100%;height:clamp(560px,80vh,720px);object-fit:cover;object-position:center 35%}
+.hero-in{position:absolute;left:0;right:0;bottom:48px}
+.chain-hero{position:relative}
+.chain-hero .wrap{position:absolute;left:0;right:0;bottom:32px}
+.hero-panel{background:var(--white);padding:40px;border-radius:var(--r);max-width:560px;position:relative;box-shadow:0 12px 40px rgba(16,42,58,.18);border-top:4px solid var(--brand)}
 .hero-panel h1{font-size:clamp(2.25rem,1.6rem + 2.6vw,3.5rem);line-height:1.15}
 .hero-panel .lead{color:var(--muted)}
-.hero-panel.small{max-width:480px;padding:28px 32px;margin-top:-110px}
+.hero-panel.small{max-width:480px;padding:24px 32px;display:inline-block}
 .hero-panel.small h1{font-size:clamp(2rem,1.5rem + 2vw,2.75rem);margin:0}
 
 /* sections */
@@ -255,6 +257,12 @@ html[lang=id] .num::before{content:"Hasil "}
 .nf{padding:120px 0}
 
 /* responsive */
+@media (max-width:1100px){
+  .hero-img img{height:460px}
+  .hero-in,.chain-hero .wrap{position:static}
+  .hero-panel{margin-top:-56px;max-width:none}
+  .hero-panel.small{display:block;max-width:none;margin-top:-40px}
+}
 @media (max-width:1024px){
   .grid4{grid-template-columns:repeat(2,1fr)}
   .grid3,.chains{grid-template-columns:repeat(2,1fr)}
@@ -282,9 +290,11 @@ html[lang=id] .num::before{content:"Hasil "}
   .wrap{padding:0 16px}
   .section{padding:52px 0}
   .grid3,.grid4,.grid2,.chains{grid-template-columns:1fr}
-  .hero-img img{height:360px}
-  .hero-panel{margin-top:-64px;padding:28px 24px}
-  .hero-panel.small{margin-top:-48px;padding:20px 24px}
+  .hero-img img{height:300px}
+  .hero-in,.chain-hero .wrap{position:static}
+  .hero-panel{margin-top:-40px;padding:28px 24px}
+  .hero-panel.small{display:block;margin-top:-32px;padding:20px 24px}
+  .chain-hero>img{height:240px}
   .stats{grid-template-columns:1fr;gap:20px}
   .quote{grid-template-columns:1fr;gap:24px}
   .quote img{width:140px;height:140px}
