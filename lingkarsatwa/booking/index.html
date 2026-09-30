@@ -4,22 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Booking layanan — Lingkar Satwa Animal Care</title>
-  <meta name="description" content="Booking pemeriksaan, vaksinasi, grooming, penitipan, atau home visit di Lingkar Satwa Surabaya lewat WhatsApp.">
+  <meta name="description" content="Booking layanan Lingkar Satwa Animal Care cabang Gubeng atau Kedurus lewat WhatsApp: check-up, vaksinasi, tindakan, rawat inap, pet hotel, dan house call.">
   <meta name="theme-color" content="#6E5DA1">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
   <meta property="og:title" content="Booking layanan — Lingkar Satwa Animal Care">
-  <meta property="og:description" content="Booking pemeriksaan, vaksinasi, grooming, penitipan, atau home visit di Lingkar Satwa Surabaya lewat WhatsApp.">
+  <meta property="og:description" content="Booking layanan Lingkar Satwa Animal Care cabang Gubeng atau Kedurus lewat WhatsApp: check-up, vaksinasi, tindakan, rawat inap, pet hotel, dan house call.">
   <meta property="og:image" content="https://sangsakawira.github.io/bisaiklan-draft/lingkarsatwa/assets/og-image.jpg">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css?v=1">
+  <link rel="stylesheet" href="../assets/style.css?v=2">
 </head>
 <body>
 <a class="skip" href="#main">Lewati ke konten</a>
-<div class="emergency-bar"><div class="container"><span>Hewanmu dalam kondisi darurat?</span><a href="tel:+6281200000000"><svg width="15" height="15" style="vertical-align:-2px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg> Telepon 0812-0000-0000</a></div></div>
+<div class="emergency-bar"><div class="container"><span><svg width="15" height="15" style="vertical-align:-2px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="eb-long"> Butuh pertolongan segera? Telepon cabang terdekat:</span><span class="eb-short">Darurat:</span></span><span><a href="tel:+628113273223">Gubeng<span class="eb-num"> 0811-3273-223</span></a> · <a href="tel:+628113449800">Kedurus<span class="eb-num"> 0811-3449-800</span></a></span></div></div>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand-link" href="../" aria-label="Lingkar Satwa Animal Care, beranda"><img src="../assets/logo.png" alt="Lingkar Satwa Animal Care" width="480" height="155"></a>
@@ -27,6 +28,7 @@
     <nav class="nav" id="nav" aria-label="Menu utama">
       <a href="../">Beranda</a>
       <a href="../layanan/">Layanan</a>
+      <a href="../tentang/">Tentang & tim</a>
       <a href="../toko/">Toko</a>
       <a href="../kontak/">Kontak</a>
       <a class="btn btn-primary btn-sm" href="../booking/" aria-current="page">Booking layanan</a>
@@ -35,23 +37,37 @@
 </header>
 
 <main id="main">
-  <div class="container">
-    <div class="page-hero">
+  <div class="page-hero band-hero">
+    <div class="container">
       <p class="breadcrumb"><a href="../">Beranda</a> / Booking</p>
       <h1>Booking layanan</h1>
-      <p>Isi data singkat di bawah. Pesan booking akan tersusun otomatis di WhatsApp.</p>
+      <p>Isi data singkat di bawah. Pesan booking akan tersusun otomatis ke WhatsApp admin cabang pilihanmu.</p>
     </div>
+  </div>
+  <div class="container" style="padding-top:2rem">
     <div class="form-layout">
       <form class="form-card" id="booking-form" novalidate>
+        <fieldset class="field"><legend class="label">Pilih cabang</legend><div class="radio-chips branch-chips"><input type="radio" id="cab-gubeng" name="cabang" value="gubeng" required><label for="cab-gubeng" class="branch-radio"><strong>Gubeng</strong><span>Jl. Sumatera No. 31-L, Gubeng, Kertajaya</span></label><input type="radio" id="cab-kedurus" name="cabang" value="kedurus"><label for="cab-kedurus" class="branch-radio"><strong>Kedurus</strong><span>Jl. Mastrip No. 37, Kedurus, Karang Pilang</span></label></div></fieldset>
+        <div class="field"><label for="b-layanan">Layanan</label><select class="input" id="b-layanan" name="layanan" required><option value="">Pilih layanan</option><optgroup label="Pemeriksaan & pencegahan"><option value="general-check-up">General check-up</option><option value="vaksinasi">Vaksinasi</option><option value="microchip">Microchip</option><option value="house-call">House call</option></optgroup><optgroup label="Diagnostik & laboratorium"><option value="pemeriksaan-darah">Pemeriksaan darah</option><option value="profil-gol-darah">Profil golongan darah</option><option value="usg">Pemeriksaan USG</option><option value="mikroskop">Pemeriksaan mikroskop</option><option value="test-kit">Screening test penyakit</option></optgroup><optgroup label="Tindakan & terapi"><option value="bedah">Bedah mayor & minor</option><option value="sterilisasi">Sterilisasi</option><option value="scaling-gigi">Scaling gigi</option><option value="akupunktur">Terapi akupunktur</option><option value="nebulizer-icu">Nebulizer & ruang ICU</option></optgroup><optgroup label="Perawatan & penginapan"><option value="rawat-inap">Rawat inap</option><option value="pet-hotel">Pet hotel</option></optgroup></select></div>
         <div class="form-row">
           <div class="field"><label for="b-nama">Nama kamu</label><input class="input" id="b-nama" name="nama" required autocomplete="name"></div>
           <div class="field"><label for="b-wa">Nomor WhatsApp</label><input class="input" id="b-wa" name="wa" type="tel" required autocomplete="tel" inputmode="tel" placeholder="08xx xxxx xxxx" pattern="[0-9+ -]{9,16}"></div>
         </div>
-        <fieldset class="field" style="border:0;padding:0;margin:0 0 1rem"><legend class="label">Jenis hewan</legend><div class="radio-chips"><input type="radio" id="hewan-0" name="hewan" value="Kucing" required><label for="hewan-0">Kucing</label><input type="radio" id="hewan-1" name="hewan" value="Anjing"><label for="hewan-1">Anjing</label><input type="radio" id="hewan-2" name="hewan" value="Lainnya"><label for="hewan-2">Lainnya</label></div></fieldset>
-        <div class="field"><label for="b-namahewan">Nama hewan (opsional)</label><input class="input" id="b-namahewan" name="namahewan" placeholder="Misalnya Mochi"></div>
-        <fieldset class="field" style="border:0;padding:0;margin:0 0 1rem"><legend class="label">Layanan</legend><div class="radio-chips"><input type="radio" id="layanan-0" name="layanan" value="Pemeriksaan umum" required><label for="layanan-0">Pemeriksaan umum</label><input type="radio" id="layanan-1" name="layanan" value="Vaksinasi"><label for="layanan-1">Vaksinasi</label><input type="radio" id="layanan-2" name="layanan" value="Grooming"><label for="layanan-2">Grooming</label><input type="radio" id="layanan-3" name="layanan" value="Penitipan"><label for="layanan-3">Penitipan</label><input type="radio" id="layanan-4" name="layanan" value="Home visit"><label for="layanan-4">Home visit</label></div></fieldset>
-        <div class="field"><label for="b-tanggal">Tanggal yang kamu inginkan</label><input class="input" id="b-tanggal" name="tanggal" type="date" required><p class="hint">Jadwal perlu dikonfirmasi oleh admin.</p></div>
-        <div class="field"><label for="b-catatan">Catatan (opsional)</label><textarea class="input" id="b-catatan" name="catatan" rows="3" placeholder="Misalnya: kucing 2 ekor, sudah vaksin tahun lalu"></textarea></div>
+        <div class="field" data-show="house-call" hidden><label for="b-alamat">Alamat untuk kunjungan</label><input class="input" id="b-alamat" name="alamat" autocomplete="street-address"></div>
+        <div class="form-row">
+          <div class="field"><label for="b-pet">Nama hewan</label><input class="input" id="b-pet" name="pet" required placeholder="Misalnya Mochi"></div>
+          <div class="field"><label for="b-jenis">Jenis / ras</label><input class="input" id="b-jenis" name="jenis" required placeholder="Misalnya kucing domestik"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="b-usia">Usia</label><input class="input" id="b-usia" name="usia" placeholder="Misalnya 2 tahun"></div>
+          <div class="field"><label for="b-bb">Berat badan</label><input class="input" id="b-bb" name="bb" placeholder="Misalnya 4 kg"></div>
+        </div>
+        <div class="form-row" data-show="pet-hotel" hidden>
+          <div class="field"><label for="b-in">Check-in</label><input class="input" id="b-in" name="checkin" type="date"></div>
+          <div class="field"><label for="b-out">Check-out</label><input class="input" id="b-out" name="checkout" type="date"></div>
+        </div>
+        <div class="field" data-hide="pet-hotel"><label for="b-tanggal">Tanggal yang kamu inginkan</label><input class="input" id="b-tanggal" name="tanggal" type="date" required><p class="hint">Jadwal perlu dikonfirmasi oleh admin.</p></div>
+        <div class="field"><label for="b-keluhan">Keluhan atau catatan (opsional)</label><textarea class="input" id="b-keluhan" name="keluhan" rows="3" placeholder="Misalnya: sudah 2 hari bersin-bersin"></textarea></div>
         <button class="btn btn-wa btn-block" type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3z"/></svg>Lanjut ke WhatsApp</button>
         <div class="notice" id="booking-notice" tabindex="-1" role="status" hidden>
           <p><strong>Satu langkah lagi.</strong> Kirim pesan di WhatsApp untuk melanjutkan permintaan booking.</p>
@@ -59,8 +75,9 @@
         </div>
       </form>
       <aside>
-        <div class="side-card"><h3>Cara kerjanya</h3><ol><li>Isi formulir ini.</li><li>WhatsApp terbuka dengan pesan booking. Tekan kirim.</li><li>Admin mengonfirmasi jadwalmu.</li></ol></div>
-        <div class="side-card urgent-box" style="background:#FBEDEE"><h3>Kondisi darurat?</h3><p class="muted">Jangan isi formulir. Langsung telepon kami.</p><a class="btn btn-danger btn-block" href="tel:+6281200000000"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Telepon 0812-0000-0000</a></div>
+        <div class="side-card"><h3>Cara kerjanya</h3><ol><li>Pilih cabang dan layanan.</li><li>WhatsApp admin cabang terbuka dengan pesan booking. Tekan kirim.</li><li>Admin mengonfirmasi jadwalmu.</li></ol></div>
+        <div class="side-card"><h3>Jam buka</h3><p class="muted" style="margin:0">Senin–Minggu, 09.00–21.00 WIB, di kedua cabang.</p></div>
+        <div class="side-card urgent-box"><h3>Kondisi darurat?</h3><p class="muted">Jangan isi formulir. Langsung telepon cabang terdekat.</p><a class="btn btn-danger btn-block btn-sm" style="margin-top:.5rem" href="tel:+628113273223"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Gubeng 0811-3273-223</a><a class="btn btn-danger btn-block btn-sm" style="margin-top:.5rem" href="tel:+628113449800"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Kedurus 0811-3449-800</a></div>
       </aside>
     </div>
   </div>
@@ -70,15 +87,16 @@
     <div class="footer-grid">
       <div>
         <a class="footer-logo" href="../"><img src="../assets/logo-white.png" alt="Lingkar Satwa Animal Care" width="480" height="155"></a>
-        <p>Klinik hewan dan pet shop di Surabaya. Teman merawat kesayanganmu.</p>
+        <p>One stop pet care services di Surabaya. <strong>#YourPetBuddies</strong> #SerahkanPadaAhlinya</p>
+        <div class="socials"><a href="https://www.instagram.com/lisapetclinic.surabaya/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.tiktok.com/@lisapetclinic.surabaya" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-1.8-2.5V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.4 7.4 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></svg></a><a href="https://www.facebook.com/yourpetbuddies/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z"/></svg></a><a href="https://www.youtube.com/channel/UCqaMnM6reHoRfTfvYFfBarQ" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15.1V8.9l5.2 3.1z"/></svg></a></div>
       </div>
-      <div><h4>Layanan</h4><ul><li><a href="../layanan/#klinik">Klinik & vaksinasi</a></li><li><a href="../layanan/#grooming">Grooming & penitipan</a></li><li><a href="../layanan/#home-visit">Home visit</a></li><li><a href="../layanan/#darurat">Layanan darurat</a></li></ul></div>
-      <div><h4>Toko</h4><ul><li><a href="../toko/?hewan=kucing">Kebutuhan kucing</a></li><li><a href="../toko/?hewan=anjing">Kebutuhan anjing</a></li><li><a href="../toko/?kat=makanan">Makanan</a></li><li><a href="../toko/?kat=aksesoris">Aksesoris</a></li></ul></div>
-      <div><h4>Kunjungi kami</h4><ul><li>Surabaya, Jawa Timur</li><li>Senin–Jumat: 08.00–20.00</li><li>Sabtu: 08.00–17.00</li><li>Minggu: 09.00–14.00</li><li><a data-wa="">WhatsApp 0812-0000-0000</a></li></ul></div>
+      <div><h4>Layanan</h4><ul><li><a href="../layanan/#periksa">Pemeriksaan & pencegahan</a></li><li><a href="../layanan/#diagnostik">Diagnostik & laboratorium</a></li><li><a href="../layanan/#tindakan">Tindakan & terapi</a></li><li><a href="../layanan/#perawatan">Perawatan & penginapan</a></li><li><a href="../toko/">Toko</a></li></ul></div>
+      <div><h4>Cabang</h4><ul class="branch-list"><li><strong>Gubeng</strong><br>Jl. Sumatera No. 31-L, Gubeng, Kertajaya, Surabaya<br><a href="https://wa.me/628113273223?text=Hai%20LISA%20Animal%20Care%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener">WA 0811-3273-223</a></li><li><strong>Kedurus</strong><br>Jl. Mastrip No. 37, Kedurus, Karang Pilang, Surabaya<br><a href="https://wa.me/628113449800?text=Hai%20LISA%20Animal%20Care%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener">WA 0811-3449-800</a></li></ul></div>
+      <div><h4>Hubungi kami</h4><ul><li>Senin–Minggu, 09.00–21.00 WIB</li><li>Customer service<br><a href="tel:+628113307722">0811-3307-722</a></li><li><a href="mailto:mylingkarsatwa@gmail.com">mylingkarsatwa@gmail.com</a></li><li><a href="../booking/">Booking layanan</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 Lingkar Satwa Indonesia</span><span>Foto: <a href="https://unsplash.com/license">Unsplash</a> · Versi demo</span></div>
   </div>
 </footer>
-<script src="../assets/app.js?v=1"></script>
+<script src="../assets/app.js?v=2"></script>
 </body>
 </html>
