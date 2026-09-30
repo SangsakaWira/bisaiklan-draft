@@ -257,6 +257,15 @@ html[lang=id] .num::before{content:"Hasil "}
 .nf{padding:120px 0}
 
 /* responsive */
+/* desktop hero: text column beside the photo (brand/ui.md) */
+@media (min-width:1101px){
+  .hero{background:var(--ice);overflow:hidden}
+  .hero-img{position:absolute;top:0;right:0;bottom:0;width:52%}
+  .hero-img img{height:100%;object-position:60% 35%}
+  .hero-in{position:relative;bottom:auto;min-height:clamp(540px,72vh,660px);display:flex;align-items:center}
+  .hero-panel{background:none;box-shadow:none;border-radius:0;border-top:0;padding:72px 0;max-width:calc(48% - 48px)}
+  .hero-panel .actions{flex-wrap:wrap}
+}
 @media (max-width:1100px){
   .hero-img img{height:460px}
   .hero-in,.chain-hero .wrap{position:static}
