@@ -7,6 +7,7 @@ Satu repo untuk semua mockup produk. Setiap produk ada di foldernya sendiri dan 
 |---|---|---|
 | `balikos/` | Balikos.com, pencarian kos di Bali | `balikos.com/deploy/` |
 | `kertapati/` | kertapatikec-go.id, profil dan layanan Kecamatan Kertapati (draft, bukan situs resmi) | `kertapatikec-go.id/deploy/` |
+| `lingkarsatwa/` | Lingkar Satwa Animal Care, klinik hewan dan pet shop di Surabaya | `lingkarsatwa/deploy/` |
 
 Semua data di mockup adalah contoh. Jangan masukkan nomor, harga, atau data pribadi asli.
 
