@@ -74,6 +74,8 @@ a:hover { color: var(--terakota-pekat); }
 .btn-ghost { background: transparent; color: var(--tinta); border-color: var(--garis); }
 .btn-ghost:hover { border-color: var(--tinta); color: var(--tinta); }
 .btn-block { width: 100%; }
+.btn-lg { min-height: 52px; padding-inline: 1.75rem; font-size: 1.0625rem; }
+.btn:disabled { opacity: .6; cursor: default; }
 
 /* Hero */
 .hero { padding: 4rem 0 3.5rem; position: relative; overflow: hidden; }
@@ -286,6 +288,10 @@ a:hover { color: var(--terakota-pekat); }
 .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pasir-muda); display: grid; place-items: center; font-weight: 700; color: var(--terakota-pekat); }
 .notice { background: var(--pasir-muda); border-radius: 10px; padding: .75rem 1rem; font-size: .875rem; margin-top: 1rem; }
 .notice[hidden] { display: none; }
+.fac-list.rules { grid-template-columns: 1fr; }
+.fac-list.rules li::before { background: var(--batu); border-radius: 50%; width: 6px; height: 6px; }
+.contact-form { display: grid; gap: .85rem; }
+.contact-form textarea { resize: vertical; }
 
 /* Owner page */
 .benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }

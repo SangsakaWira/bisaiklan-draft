@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Detail kos — Balikos.com (demo)</title>
-  <meta name="description" content="Detail kos contoh di Balikos.com. Situs demo.">
+  <title>Detail kos — Balikos.com</title>
+  <meta name="description" content="Detail kos di Bali: fasilitas, aturan, dan lokasi. Tanya harga dan ketersediaan langsung ke pemilik.">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css?v=3">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
 </head>
 <body>
 <a class="skip" href="#main">Lewati ke konten</a>
-<div class="demo-bar"><strong>Situs demo.</strong> Kos ini adalah contoh, bukan listing aktual.</div>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -41,8 +40,8 @@
 
     <div class="detail-layout">
       <div>
-        <div class="kos-meta" style="margin-bottom:.5rem"><span data-k="tipe"></span><span class="sample-note">Contoh — bukan listing aktual</span></div>
-        <h1 style="font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem)" data-k="nama">Nama kos (contoh)</h1>
+        <div class="kos-meta" style="margin-bottom:.5rem"><span data-k="tipe"></span><span class="small muted" data-k="area"></span></div>
+        <h1 style="font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem)" data-k="nama">Kos di Bali</h1>
         <p class="kos-loc" style="font-size:1rem">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
           <span data-k="lokasi"></span>
@@ -55,29 +54,34 @@
         </div>
         <div class="detail-block">
           <h2 style="font-size:1.375rem">Aturan kos</h2>
-          <p class="muted">Aturan belum dicantumkan. Tanyakan aturan jam tamu, hewan peliharaan, dan lama sewa minimum kepada pemilik.</p>
+          <ul class="fac-list rules" data-k="aturan"></ul>
         </div>
         <div class="detail-block">
           <h2 style="font-size:1.375rem">Tentang kos ini</h2>
-          <p class="muted">Deskripsi akan ditampilkan di sini setelah pemilik melengkapi informasi kos.</p>
+          <p data-k="deskripsi"></p>
         </div>
       </div>
 
-      <aside class="contact-card" aria-label="Hubungi pemilik">
-        <p class="price-line">Harga per bulan<strong>Belum dicantumkan</strong></p>
-        <p class="small muted" style="margin:0">Kisaran contoh: <span data-k="kisaran"></span></p>
+      <aside class="contact-card" aria-label="Tanya pemilik">
+        <p class="price-line">Harga per bulan<strong>Tanya pemilik</strong></p>
+        <p class="small muted" style="margin:0">Kelas harga: <span data-k="kisaran"></span></p>
         <div class="owner-row">
-          <span class="avatar" aria-hidden="true">P</span>
-          <div><strong>Pemilik kos</strong><br><span class="small muted">Nama pemilik belum tersedia</span></div>
+          <span class="avatar" aria-hidden="true" data-k="inisial">P</span>
+          <div><strong data-k="pemilik">Pemilik kos</strong><br><span class="small muted">Pemilik kos</span></div>
         </div>
-        <button class="btn btn-primary btn-block" type="button" data-demo-contact="contact-notice">Hubungi pemilik</button>
-        <p class="small muted" style="margin:.75rem 0 0">Tanyakan harga, aturan, dan ketersediaan langsung kepada pemilik.</p>
-        <div class="notice" id="contact-notice" tabindex="-1" role="status" hidden>Kontak pemilik belum tersedia di demo. Nantinya tombol ini membuka WhatsApp pemilik.</div>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="field"><label for="c-nama">Nama kamu</label><input class="input" id="c-nama" name="nama" required autocomplete="name"></div>
+          <div class="field"><label for="c-wa">Nomor WhatsApp</label><input class="input" id="c-wa" name="wa" type="tel" required autocomplete="tel" inputmode="tel" placeholder="08xx xxxx xxxx"></div>
+          <div class="field"><label for="c-pesan">Pesan</label><textarea class="input" id="c-pesan" name="pesan" rows="5" required></textarea></div>
+          <button class="btn btn-primary btn-block" type="submit">Tanya pemilik</button>
+        </form>
+        <p class="small muted" style="margin:.75rem 0 0">Balasan pemilik masuk ke WhatsApp-mu.</p>
+        <div class="notice" id="contact-notice" tabindex="-1" role="status" hidden></div>
       </aside>
     </div>
 
     <section class="section" style="padding-top:1rem">
-      <h2 style="font-size:1.5rem">Kos contoh lainnya</h2>
+      <h2 style="font-size:1.5rem">Kos lain yang mungkin cocok</h2>
       <div class="kos-grid" id="similar" style="margin-top:1.25rem"></div>
     </section>
   </div>
@@ -90,13 +94,13 @@
         <a class="footer-logo" href="../"><img src="../assets/logo.png" alt="balikos" width="130" height="47"></a>
         <p>Ruang untuk keseharianmu. Cari kos di Bali dengan informasi yang jelas.</p>
       </div>
-      <div><h4>Cari</h4><ul><li><a href="../cari/?q=Denpasar">Denpasar</a></li><li><a href="../cari/?q=Jimbaran">Jimbaran</a></li><li><a href="../cari/?q=Kuta">Kuta</a></li><li><a href="../cari/?q=Canggu">Canggu</a></li><li><a href="../cari/?q=Ubud">Ubud</a></li></ul></div>
-      <div><h4>Balikos</h4><ul><li><a href="../pemilik/">Untuk pemilik</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../brand/">Brand guideline</a></li></ul></div>
-      <div><h4>Kontak</h4><ul><li>Email: <em>belum tersedia</em></li><li>WhatsApp: <em>belum tersedia</em></li></ul></div>
+      <div><h4>Area</h4><ul><li><a href="../cari/?q=Denpasar">Denpasar</a></li><li><a href="../cari/?q=Jimbaran">Jimbaran</a></li><li><a href="../cari/?q=Kuta">Kuta</a></li><li><a href="../cari/?q=Canggu">Canggu</a></li><li><a href="../cari/?q=Ubud">Ubud</a></li></ul></div>
+      <div><h4>Dekat kampus</h4><ul><li><a href="../cari/?q=Udayana">Universitas Udayana</a></li><li><a href="../cari/?q=Politeknik+Negeri+Bali">Politeknik Negeri Bali</a></li><li><a href="../cari/?q=ISI+Denpasar">ISI Denpasar</a></li><li><a href="../cari/?q=Warmadewa">Universitas Warmadewa</a></li></ul></div>
+      <div><h4>Balikos</h4><ul><li><a href="../#cara">Cara kerja</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../pemilik/">Untuk pemilik kos</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Balikos.com</span><span>Situs demo. Data kos adalah contoh. Foto: <a href="https://unsplash.com/license">Unsplash</a>.</span></div>
+    <div class="footer-bottom"><span>© 2026 Balikos.com</span><span>Foto: <a href="https://unsplash.com/license">Unsplash</a> · Versi demo</span></div>
   </div>
 </footer>
-<script src="../assets/app.js?v=3"></script>
+<script src="../assets/app.js?v=4"></script>
 </body>
 </html>

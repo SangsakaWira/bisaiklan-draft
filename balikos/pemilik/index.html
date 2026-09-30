@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Untuk pemilik kos — Balikos.com (demo)</title>
-  <meta name="description" content="Punya kos di Bali? Kenalkan tempatmu di Balikos.com. Situs demo.">
+  <title>Untuk pemilik kos — Balikos.com</title>
+  <meta name="description" content="Punya kos di Bali? Kenalkan tempatmu di Balikos.com.">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/style.css?v=3">
+  <link rel="stylesheet" href="../assets/style.css?v=4">
 </head>
 <body>
 <a class="skip" href="#main">Lewati ke konten</a>
-<div class="demo-bar"><strong>Situs demo.</strong> Formulir di halaman ini belum mengirim data.</div>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -30,22 +29,17 @@
 </header>
 
 <main id="main">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Untuk pemilik</p>
-        <h1>Punya kos di Bali? Kenalkan tempatmu.</h1>
-        <p class="lead">Tampilkan fasilitas, aturan, dan lokasi umum kosmu dengan jelas, supaya calon penyewa bisa mempelajarinya sebelum menghubungimu.</p>
-        <a class="btn btn-primary" href="#form">Daftarkan kos</a>
-      </div>
-      <div class="hero-art">
-        <div class="photo main"><img src="../assets/foto/kamar-8.jpg" alt="Kamar kos yang rapi dengan bantal bermotif" width="1000" height="750"></div>
-        <div class="photo small"><img src="../assets/foto/km-1.jpg" alt="" width="1000" height="750"></div>
-      </div>
+  <section class="hero hero-photo">
+    <img class="hero-bg" src="../assets/foto/hero-pemilik.jpg" alt="" width="1920" height="1280" fetchpriority="high">
+    <div class="container hero-inner">
+      <p class="eyebrow">Untuk pemilik kos</p>
+      <h1>Punya kos di Bali? Kenalkan tempatmu.</h1>
+      <p class="lead">Tampilkan fasilitas, aturan, dan lokasi umum kosmu dengan jelas, supaya calon penyewa bisa mempelajarinya sebelum menghubungimu.</p>
+      <a class="btn btn-primary btn-lg" href="#form">Daftarkan kos</a>
     </div>
   </section>
 
-  <section class="section" style="padding-top:0">
+  <section class="section">
     <div class="container">
       <h2>Yang kamu dapatkan</h2>
       <div class="benefits" style="margin-top:1.5rem">
@@ -53,14 +47,13 @@
         <div class="step"><span class="step-num">2</span><h3>Dihubungi langsung</h3><p>Calon penyewa menghubungimu langsung untuk menanyakan harga dan ketersediaan.</p></div>
         <div class="step"><span class="step-num">3</span><h3>Mudah diperbarui</h3><p>Ubah informasi kos kapan saja saat ada kamar kosong atau aturan baru.</p></div>
       </div>
-      <p class="small muted" style="margin-top:1rem">Fitur di atas adalah rencana layanan. Biaya dan ketentuan belum ditetapkan.</p>
     </div>
   </section>
 
   <section class="section" id="form" style="background:var(--putih)">
     <div class="container" style="max-width:760px">
-      <h2>Formulir minat</h2>
-      <p class="muted">Isi data singkat kosmu. Di demo ini, data tidak dikirim atau disimpan.</p>
+      <h2>Daftarkan kosmu</h2>
+      <p class="muted">Isi data singkat kosmu. Tim Balikos akan menghubungimu lewat WhatsApp untuk melengkapi foto dan informasi kos.</p>
       <form class="form-card" id="owner-form" novalidate>
         <div class="form-row">
           <div class="field"><label for="o-nama">Nama kamu</label><input class="input" id="o-nama" name="nama" required autocomplete="name"></div>
@@ -84,8 +77,8 @@
           <div class="field"><label for="o-kamar">Jumlah kamar</label><input class="input" id="o-kamar" name="kamar" type="number" min="1" inputmode="numeric"></div>
         </div>
         <div class="field"><label for="o-catatan">Catatan (opsional)</label><textarea class="input" id="o-catatan" name="catatan" rows="3"></textarea></div>
-        <button class="btn btn-primary" type="submit">Kirim formulir</button>
-        <div class="notice" id="owner-notice" tabindex="-1" role="status" hidden>Terima kasih. Ini situs demo, jadi datamu tidak dikirim atau disimpan.</div>
+        <button class="btn btn-primary" type="submit">Kirim data kos</button>
+        <div class="notice" id="owner-notice" tabindex="-1" role="status" hidden></div>
       </form>
     </div>
   </section>
@@ -98,13 +91,13 @@
         <a class="footer-logo" href="../"><img src="../assets/logo.png" alt="balikos" width="130" height="47"></a>
         <p>Ruang untuk keseharianmu. Cari kos di Bali dengan informasi yang jelas.</p>
       </div>
-      <div><h4>Cari</h4><ul><li><a href="../cari/?q=Denpasar">Denpasar</a></li><li><a href="../cari/?q=Jimbaran">Jimbaran</a></li><li><a href="../cari/?q=Kuta">Kuta</a></li><li><a href="../cari/?q=Canggu">Canggu</a></li><li><a href="../cari/?q=Ubud">Ubud</a></li></ul></div>
-      <div><h4>Balikos</h4><ul><li><a href="./">Untuk pemilik</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../brand/">Brand guideline</a></li></ul></div>
-      <div><h4>Kontak</h4><ul><li>Email: <em>belum tersedia</em></li><li>WhatsApp: <em>belum tersedia</em></li></ul></div>
+      <div><h4>Area</h4><ul><li><a href="../cari/?q=Denpasar">Denpasar</a></li><li><a href="../cari/?q=Jimbaran">Jimbaran</a></li><li><a href="../cari/?q=Kuta">Kuta</a></li><li><a href="../cari/?q=Canggu">Canggu</a></li><li><a href="../cari/?q=Ubud">Ubud</a></li></ul></div>
+      <div><h4>Dekat kampus</h4><ul><li><a href="../cari/?q=Udayana">Universitas Udayana</a></li><li><a href="../cari/?q=Politeknik+Negeri+Bali">Politeknik Negeri Bali</a></li><li><a href="../cari/?q=ISI+Denpasar">ISI Denpasar</a></li><li><a href="../cari/?q=Warmadewa">Universitas Warmadewa</a></li></ul></div>
+      <div><h4>Balikos</h4><ul><li><a href="../#cara">Cara kerja</a></li><li><a href="../#faq">FAQ</a></li><li><a href="../pemilik/">Untuk pemilik kos</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Balikos.com</span><span>Situs demo. Data kos adalah contoh. Foto: <a href="https://unsplash.com/license">Unsplash</a>.</span></div>
+    <div class="footer-bottom"><span>© 2026 Balikos.com</span><span>Foto: <a href="https://unsplash.com/license">Unsplash</a> · Versi demo</span></div>
   </div>
 </footer>
-<script src="../assets/app.js?v=3"></script>
+<script src="../assets/app.js?v=4"></script>
 </body>
 </html>
