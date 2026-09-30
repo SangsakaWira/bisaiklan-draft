@@ -81,6 +81,23 @@ a:hover { color: var(--terakota-pekat); }
 .hero .lead { font-size: 1.25rem; color: var(--batu); margin-bottom: 2rem; }
 .hero-art { position: relative; aspect-ratio: 4 / 4.2; }
 
+/* Hero foto full-bleed */
+.hero-photo { padding: 6.5rem 0 5.5rem; min-height: min(720px, 88vh); display: flex; align-items: center; color: var(--putih); background: var(--tinta); }
+.hero-photo .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
+.hero-photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(32, 43, 54, .92) 0%, rgba(32, 43, 54, .78) 42%, rgba(32, 43, 54, .25) 75%, rgba(32, 43, 54, .1) 100%); }
+.hero-inner { position: relative; z-index: 2; }
+.hero-inner > * { max-width: 640px; }
+.hero-photo .eyebrow { color: var(--pasir); }
+.hero-photo h1 { font-size: clamp(2.25rem, 1.25rem + 3.6vw, 3.5rem); color: var(--putih); }
+.hero-photo .lead { color: rgba(255, 255, 255, .88); }
+.hero-photo .search-card { max-width: 720px; border: 0; box-shadow: 0 12px 40px rgba(0, 0, 0, .25); color: var(--tinta); }
+.hero-photo .chips .chips-label { color: rgba(255, 255, 255, .8); }
+.hero-photo .chip { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .35); color: var(--putih); backdrop-filter: blur(4px); }
+.hero-photo .chip:hover { background: var(--putih); border-color: var(--putih); color: var(--tinta); }
+.hero-points { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-wrap: wrap; gap: .75rem 1.75rem; max-width: 720px; font-size: .9375rem; color: rgba(255, 255, 255, .9); }
+.hero-points li { display: flex; align-items: center; gap: .5rem; }
+.hero-points svg { color: var(--pasir); flex: none; }
+
 /* Arch illustration (pengganti foto) */
 .arch-art {
   position: relative; border-radius: var(--radius); overflow: hidden;
@@ -312,6 +329,9 @@ table.contrast th { background: var(--kapur); }
   .hero { padding: 2.5rem 0; }
   .hero .lead { font-size: 1.125rem; }
   .hero-art { display: none; }
+  .hero-photo { padding: 3.5rem 0 3rem; min-height: 0; }
+  .hero-photo::before { background: linear-gradient(180deg, rgba(32, 43, 54, .72) 0%, rgba(32, 43, 54, .88) 100%); }
+  .hero-points { flex-direction: column; gap: .5rem; margin-top: 1.5rem; }
   .search-card { grid-template-columns: 1fr; }
   .area-grid { grid-template-columns: repeat(2, 1fr); }
   .kos-grid, .steps, .benefits, .logo-panels, .form-row, .fac-list { grid-template-columns: 1fr; }

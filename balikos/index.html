@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Balikos.com — Cari kos di Bali (demo)</title>
-  <meta name="description" content="Cari kos di Bali, mulai dari lokasimu. Lihat fasilitas dan tanyakan ketersediaan langsung kepada pemilik. Situs demo.">
+  <title>Balikos.com — Cari kos di Bali</title>
+  <meta name="description" content="Cari kos di Bali, mulai dari lokasimu. Lihat fasilitas dan tanyakan ketersediaan langsung kepada pemilik.">
   <meta property="og:title" content="Balikos.com — Cari kos di Bali">
-  <meta property="og:description" content="Cari kos di Bali, mulai dari lokasimu. Situs demo.">
-  <meta property="og:image" content="https://sangsakawira.github.io/bisaiklan-draft/balikos/assets/logo.png">
+  <meta property="og:description" content="Cari kos di Bali, mulai dari lokasimu.">
+  <meta property="og:image" content="https://sangsakawira.github.io/bisaiklan-draft/balikos/assets/foto/hero-kamar.jpg">
+  <link rel="preload" as="image" href="assets/foto/hero-kamar.jpg">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=2">
+  <link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Lewati ke konten</a>
-<div class="demo-bar"><strong>Situs demo.</strong> Semua kos di halaman ini adalah contoh, bukan listing aktual.</div>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -33,45 +33,46 @@
 </header>
 
 <main id="main">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Kos di Bali</p>
-        <h1>Cari kos di Bali, mulai dari lokasimu.</h1>
-        <p class="lead">Lihat fasilitas dan aturan kos dengan jelas, lalu tanyakan harga dan ketersediaan langsung kepada pemilik.</p>
+  <section class="hero hero-photo">
+    <img class="hero-bg" src="assets/foto/hero-kamar.jpg" alt="" width="1920" height="1280" fetchpriority="high">
+    <div class="container hero-inner">
+      <p class="eyebrow">Kos di Bali</p>
+      <h1>Cari kos di Bali, mulai dari lokasimu.</h1>
+      <p class="lead">Lihat fasilitas dan aturan kos dengan jelas, lalu tanyakan harga dan ketersediaan langsung kepada pemilik.</p>
 
-        <form class="search-card" action="cari/" method="get">
-          <div class="field">
-            <label for="hero-q">Lokasi</label>
-            <div class="input-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-              <input class="input" id="hero-q" name="q" type="search" placeholder="Masukkan area atau kampus" autocomplete="off">
-            </div>
+      <form class="search-card" action="cari/" method="get">
+        <div class="field">
+          <label for="hero-q">Lokasi</label>
+          <div class="input-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <input class="input" id="hero-q" name="q" type="search" placeholder="Masukkan area atau kampus" autocomplete="off">
           </div>
-          <div class="field">
-            <label for="hero-tipe">Tipe kos</label>
-            <select class="input" id="hero-tipe" name="tipe">
-              <option value="">Semua tipe</option>
-              <option value="putra">Putra</option>
-              <option value="putri">Putri</option>
-              <option value="campur">Campur</option>
-            </select>
-          </div>
-          <button class="btn btn-primary" type="submit">Cari kos</button>
-        </form>
-
-        <div class="chips">
-          <span class="chips-label">Kampus:</span>
-          <a class="chip" href="cari/?q=Udayana">Universitas Udayana</a>
-          <a class="chip" href="cari/?q=Politeknik+Negeri+Bali">Politeknik Negeri Bali</a>
-          <a class="chip" href="cari/?q=ISI+Denpasar">ISI Denpasar</a>
-          <a class="chip" href="cari/?q=Warmadewa">Warmadewa</a>
         </div>
+        <div class="field">
+          <label for="hero-tipe">Tipe kos</label>
+          <select class="input" id="hero-tipe" name="tipe">
+            <option value="">Semua tipe</option>
+            <option value="putra">Putra</option>
+            <option value="putri">Putri</option>
+            <option value="campur">Campur</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Cari kos</button>
+      </form>
+
+      <div class="chips">
+        <span class="chips-label">Dekat kampus:</span>
+        <a class="chip" href="cari/?q=Udayana">Udayana</a>
+        <a class="chip" href="cari/?q=Politeknik+Negeri+Bali">PNB</a>
+        <a class="chip" href="cari/?q=ISI+Denpasar">ISI Denpasar</a>
+        <a class="chip" href="cari/?q=Warmadewa">Warmadewa</a>
       </div>
-      <div class="hero-art">
-        <div class="photo main"><img src="assets/foto/kamar-4.jpg" alt="Kamar kos dengan meja kerja dan kasur" width="1000" height="750"></div>
-        <div class="photo small"><img src="assets/foto/kamar-7.jpg" alt="" width="1000" height="750"></div>
-      </div>
+
+      <ul class="hero-points">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Kos putra, putri, dan campur</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Fasilitas dan aturan tertulis jelas</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Tanya langsung ke pemilik</li>
+      </ul>
     </div>
   </section>
 
@@ -162,6 +163,6 @@
     <div class="footer-bottom"><span>© 2026 Balikos.com</span><span>Situs demo. Data kos adalah contoh. Foto: <a href="https://unsplash.com/license">Unsplash</a>.</span></div>
   </div>
 </footer>
-<script src="assets/app.js?v=2"></script>
+<script src="assets/app.js?v=3"></script>
 </body>
 </html>
