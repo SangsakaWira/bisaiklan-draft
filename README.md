@@ -9,6 +9,7 @@ Satu repo untuk semua mockup produk. Setiap produk ada di foldernya sendiri dan 
 | `gqsp/` | GQSP Indonesia, revamp gqspindonesia.org (demo, bukan situs resmi; konten publik dari situs klien, bukan contoh) | `gqspindonesia.org/deploy/` |
 | `kertapati/` | kertapatikec-go.id, profil dan layanan Kecamatan Kertapati (draft, bukan situs resmi) | `kertapatikec-go.id/deploy/` |
 | `lingkarsatwa/` | Lingkar Satwa Animal Care, klinik hewan dan pet shop di Surabaya | `lingkarsatwa/deploy/` |
+| `umiksopiah/` | Yayasan Umik Sopiah, profil yayasan pendidikan SD dan SMP dengan info PPDB | `umiksopiah.id/deploy/` |
 
 Semua data di mockup adalah contoh. Jangan masukkan nomor, harga, atau data pribadi asli.
 
