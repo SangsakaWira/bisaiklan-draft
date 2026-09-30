@@ -1,5 +1,5 @@
 /* Lingkar Satwa — data dan interaksi situs.
-   Kontak dan layanan dari lisa.pet (30 September 2026). Daftar produk toko adalah data demo. */
+   Kontak dan layanan dari lisa.pet (30 September 2026). Toko ada di shop.js. */
 const INFO = {
   jam: 'Senin–Minggu, 09.00–21.00 WIB',
   cabang: {
@@ -16,23 +16,6 @@ const LAYANAN = {
   'sterilisasi': 'Sterilisasi', 'scaling-gigi': 'Scaling gigi', 'akupunktur': 'Terapi akupunktur',
   'nebulizer-icu': 'Nebulizer & ruang ICU', 'rawat-inap': 'Rawat inap', 'pet-hotel': 'Pet hotel',
 };
-
-const PRODUK = [
-  { id: 'kering-kucing', nama: 'Makanan kering kucing dewasa', ket: 'Kemasan 1,5 kg', hewan: 'kucing', kat: 'makanan', foto: 'p-makanan-kucing' },
-  { id: 'basah-kucing', nama: 'Makanan basah kucing', ket: 'Pouch 85 g, aneka rasa', hewan: 'kucing', kat: 'makanan', foto: 'p-makanan-basah' },
-  { id: 'kering-anjing', nama: 'Makanan kering anjing dewasa', ket: 'Kemasan 3 kg', hewan: 'anjing', kat: 'makanan', foto: 'p-makanan-anjing' },
-  { id: 'puppy', nama: 'Makanan anak anjing', ket: 'Kemasan 1,5 kg', hewan: 'anjing', kat: 'makanan', foto: 'p-anjing-makan' },
-  { id: 'snack-anjing', nama: 'Biskuit camilan anjing', ket: 'Toples 500 g', hewan: 'anjing', kat: 'makanan', foto: 'p-snack' },
-  { id: 'pelet-kelinci', nama: 'Pelet kelinci', ket: 'Kemasan 1 kg', hewan: 'kecil', kat: 'makanan', foto: 'p-kelinci' },
-  { id: 'pasir-gumpal', nama: 'Pasir kucing gumpal', ket: 'Kantong 10 L, rendah debu', hewan: 'kucing', kat: 'pasir', foto: 'p-pasir' },
-  { id: 'vitamin-bulu', nama: 'Vitamin bulu dan kulit', ket: 'Untuk kucing dan anjing', hewan: 'kucing anjing', kat: 'vitamin', foto: 'p-vitamin' },
-  { id: 'obat-cacing', nama: 'Obat cacing', ket: 'Dosis sesuai anjuran dokter', hewan: 'kucing anjing', kat: 'vitamin', foto: 'p-kucing' },
-  { id: 'kalung', nama: 'Kalung kucing dengan lonceng', ket: 'Ukuran dapat disesuaikan', hewan: 'kucing', kat: 'aksesoris', foto: 'p-kalung' },
-  { id: 'bandana', nama: 'Bandana anjing', ket: 'Ukuran S–L', hewan: 'anjing', kat: 'aksesoris', foto: 'p-bandana' },
-  { id: 'mangkuk', nama: 'Mangkuk makan anti-slip', ket: 'Stainless, 2 ukuran', hewan: 'kucing anjing', kat: 'aksesoris', foto: 'p-mangkuk' },
-];
-const HEWAN_LABEL = { kucing: 'Kucing', anjing: 'Anjing', kecil: 'Hewan kecil' };
-const KAT_LABEL = { makanan: 'Makanan', pasir: 'Pasir', vitamin: 'Vitamin & obat', aksesoris: 'Aksesoris' };
 
 const BASE = document.documentElement.dataset.base || '';
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -62,45 +45,6 @@ function refreshWaLinks() {
   });
 }
 refreshWaLinks();
-
-/* Kartu produk */
-function productCard(p) {
-  const hewan = p.hewan.split(' ').map(h => `<span class="tag">${HEWAN_LABEL[h]}</span>`).join('');
-  const cab = INFO.cabang[cabangPilihan];
-  return `<article class="product-card">
-    <div class="photo"><img src="${BASE}assets/foto/${p.foto}.jpg" alt="${esc(p.nama)}" loading="lazy" width="800" height="800"></div>
-    <div class="body">
-      <div class="tags">${hewan}<span class="tag kat">${KAT_LABEL[p.kat]}</span></div>
-      <h3>${esc(p.nama)}</h3>
-      <p class="desc">${esc(p.ket)}</p>
-      <p class="price">Tanya harga</p>
-      <a class="btn btn-wa btn-sm" href="${waLink(`Hai LISA Animal Care cabang ${cab.nama}, saya mau tanya harga dan stok: ${p.nama} (${p.ket}).`, cabangPilihan)}" target="_blank" rel="noopener">${WA_ICON}Pesan via WhatsApp</a>
-    </div>
-  </article>`;
-}
-
-const featured = document.getElementById('featured-products');
-if (featured) featured.innerHTML = ['kering-kucing', 'kering-anjing', 'pasir-gumpal', 'vitamin-bulu'].map(id => productCard(PRODUK.find(p => p.id === id))).join('');
-
-/* Toko: filter hewan, kategori, dan cabang */
-const catalog = document.getElementById('catalog');
-if (catalog) {
-  const q = new URLSearchParams(location.search);
-  const state = { hewan: q.get('hewan') || '', kat: q.get('kat') || '' };
-  const count = document.getElementById('result-count');
-  function render() {
-    document.querySelectorAll('[data-filter]').forEach(b => b.setAttribute('aria-pressed', state[b.dataset.filter] === b.dataset.value));
-    document.querySelectorAll('[data-cabang]').forEach(b => b.setAttribute('aria-pressed', b.dataset.cabang === cabangPilihan));
-    const list = PRODUK.filter(p => (!state.hewan || p.hewan.split(' ').includes(state.hewan)) && (!state.kat || p.kat === state.kat));
-    count.textContent = `${list.length} produk · pesanan dikirim ke cabang ${INFO.cabang[cabangPilihan].nama}`;
-    catalog.innerHTML = list.length
-      ? `<div class="product-grid">${list.map(productCard).join('')}</div>`
-      : `<div class="empty"><h3>Produk belum tersedia di kategori ini.</h3><p class="muted">Tanyakan ke admin, mungkin bisa kami carikan.</p><a class="btn btn-wa" href="${waLink('Hai LISA Animal Care, saya mencari produk yang belum ada di katalog.', cabangPilihan)}" target="_blank" rel="noopener">${WA_ICON}Tanya admin</a></div>`;
-  }
-  document.querySelectorAll('[data-filter]').forEach(b => b.addEventListener('click', () => { state[b.dataset.filter] = b.dataset.value; render(); }));
-  document.querySelectorAll('[data-cabang]').forEach(b => b.addEventListener('click', () => { setCabang(b.dataset.cabang); render(); refreshWaLinks(); }));
-  render();
-}
 
 /* Booking */
 const bookingForm = document.getElementById('booking-form');
@@ -168,7 +112,7 @@ const BTN_DARURAT = CABANG_IDS.map(id => `<a class="btn btn-danger btn-sm" href=
 const BTN_ADMIN = t => CABANG_IDS.map(id => `<a class="btn btn-wa btn-sm" href="${waLink(t || 'Hai LISA Animal Care, saya ingin bertanya.', id)}" target="_blank" rel="noopener">${WA_ICON}Admin ${INFO.cabang[id].nama}</a>`).join(' ');
 const BTN_BOOKING = l => `<a class="btn btn-primary btn-sm" href="${BASE}booking/${l ? '?layanan=' + l : ''}">Booking${l ? ' ' + LAYANAN[l].toLowerCase() : ' layanan'}</a>`;
 const BTN_LAYANAN = id => `<a class="btn btn-outline btn-sm" href="${BASE}layanan/#${id}">Lihat detail</a>`;
-const QUICK_UTAMA = ['Lihat layanan', 'Cabang & jam', 'Pet hotel', 'Cara booking', '!Hubungi darurat'];
+const QUICK_UTAMA = ['Lihat layanan', 'Belanja', 'Cabang & jam', 'Cara booking', '!Hubungi darurat'];
 
 const svc = (id, teks, quick) => () => ({ html: `<p>${teks}</p>${BTN_BOOKING(id)} ${BTN_LAYANAN(id)}`, quick: quick || ['Cabang & jam', 'Harga'] });
 
@@ -213,14 +157,18 @@ const INTENTS = [
     jawab: () => ({ html: `<p>Lingkar Satwa punya 16 layanan:</p><ul><li>Pemeriksaan & pencegahan: check-up, vaksinasi, microchip, house call</li><li>Diagnostik: darah, golongan darah, USG, mikroskop, test kit</li><li>Tindakan: bedah, sterilisasi, scaling gigi, akupunktur, nebulizer & ICU</li><li>Perawatan: rawat inap, pet hotel</li></ul><a class="btn btn-outline btn-sm" href="${BASE}layanan/">Lihat semua layanan</a>`, quick: ['Pet hotel', 'Vaksinasi', 'Sterilisasi', 'Cara booking'] }) },
   { id: 'hewan-kecil', kata: ['kelinci', 'hamster', 'burung', 'marmut', 'guinea', 'kura', 'reptil', 'musang', 'sugar glider', 'ikan'],
     jawab: () => ({ html: `<p>Untuk hewan selain kucing dan anjing, tanyakan dulu ke admin cabang ya, supaya bisa dipastikan layanan dan dokter yang tersedia.</p>${BTN_ADMIN('Hai LISA Animal Care, apakah bisa melayani hewan saya?')}`, quick: ['Cabang & jam'] }) },
-  { id: 'produk', kata: ['produk', 'toko', 'petshop', 'pet shop', 'jual', 'beli', 'belanja', 'makanan', 'pakan', 'dry food', 'wet food', 'pasir', 'litter', 'vitamin', 'snack', 'camilan', 'aksesoris', 'kalung', 'mainan', 'stok'],
-    jawab: () => ({ html: `<p>Di toko ada makanan kucing dan anjing, pasir, vitamin, obat cacing, dan aksesoris. Pesan lewat tombol WhatsApp di setiap produk, admin cabang akan mengonfirmasi harga dan stok.</p><a class="btn btn-primary btn-sm" href="${BASE}toko/">Lihat toko</a>`, quick: ['Harga', 'Cabang & jam'] }) },
+  { id: 'ongkir', kata: ['ongkir', 'kurir', 'gosend', 'gojek', 'grab', 'grabexpress', 'jne', 'j&t', 'jnt', 'sicepat', 'kirim', 'antar', 'delivery', 'pengiriman', 'ambil di klinik'],
+    jawab: () => ({ html: `<p>Pilihan pengiriman di checkout:</p><ul><li><strong>Ambil di klinik</strong> Gubeng atau Kedurus, gratis</li><li><strong>GoSend / GrabExpress</strong> instan atau same day, area Surabaya</li><li><strong>JNE, J&T, SiCepat</strong> untuk luar kota</li></ul><p>Ongkir mengikuti tarif kurir dan dikonfirmasi admin sebelum pembayaran.</p><a class="btn btn-primary btn-sm" href="${BASE}toko/">Belanja sekarang</a>`, quick: ['Cara bayar', 'Produk'] }) },
+  { id: 'bayar', kata: ['cara bayar', 'bayar', 'pembayaran', 'transfer', 'qris', 'rekening', 'cod', 'kasir', 'checkout'],
+    jawab: () => ({ html: '<p>Setelah checkout, pesananmu dikirim ke WhatsApp admin cabang. Admin mengonfirmasi stok, ongkir, dan total, lalu mengirim detail pembayaran lewat <strong>transfer bank</strong> atau <strong>QRIS</strong>. Kalau ambil di klinik, bisa juga <strong>bayar di kasir</strong>.</p>', quick: ['Ongkir', 'Produk'] }) },
+  { id: 'produk', kata: ['produk', 'belanja', 'toko', 'petshop', 'pet shop', 'jual', 'beli', 'belanja', 'makanan', 'pakan', 'dry food', 'wet food', 'pasir', 'litter', 'vitamin', 'snack', 'camilan', 'aksesoris', 'kalung', 'mainan', 'stok'],
+    jawab: () => ({ html: `<p>Di toko online kami ada makanan kucing dan anjing, pasir, vitamin, obat cacing, dan aksesoris. Masukkan ke keranjang, checkout, lalu pilih <strong>ambil di klinik</strong> atau kirim dengan <strong>GoSend, GrabExpress, JNE, J&T, atau SiCepat</strong>.</p><a class="btn btn-primary btn-sm" href="${BASE}toko/">Belanja sekarang</a>`, quick: ['Ongkir', 'Cara bayar', 'Cabang & jam'] }) },
   { id: 'lokasi', kata: ['lokasi', 'alamat', 'dimana', 'di mana', 'maps', 'peta', 'arah', 'cabang', 'terdekat', 'gubeng', 'kedurus', 'parkir', 'cabang & jam', 'surabaya'],
     jawab: () => ({ html: `<p>Kami punya dua cabang di Surabaya:</p><ul>${CAB_LIST}</ul><p>Keduanya buka ${INFO.jam}.</p><a class="btn btn-primary btn-sm" href="${BASE}kontak/">Lihat peta</a>`, quick: ['Cara booking', 'Lihat layanan'] }) },
   { id: 'jam', kata: ['jam', 'buka', 'tutup', 'operasional', 'libur', 'minggu', 'sabtu', 'hari ini', 'malam ini'],
     jawab: () => ({ html: `<p>Cabang Gubeng dan Kedurus buka <strong>${INFO.jam}</strong>.</p><p>Untuk kondisi darurat, telepon cabang terdekat sebelum berangkat.</p>`, quick: ['Cabang & jam', 'Cara booking', '!Hubungi darurat'] }) },
   { id: 'harga', kata: ['harga', 'biaya', 'tarif', 'berapa', 'mahal', 'murah', 'bayar', 'promo', 'diskon', 'price'],
-    jawab: () => ({ html: `<p>Biaya tergantung jenis hewan, kondisi, dan tindakan yang dibutuhkan, jadi admin cabang yang akan menginformasikan.</p>${BTN_ADMIN('Hai LISA Animal Care, saya ingin tanya harga.')}`, quick: ['Lihat layanan', 'Produk'] }) },
+    jawab: () => ({ html: `<p>Harga produk toko bisa kamu lihat langsung di halaman Toko. Biaya layanan medis tergantung jenis hewan, kondisi, dan tindakan, jadi admin cabang yang akan menginformasikan.</p><a class="btn btn-primary btn-sm" href="${BASE}toko/">Lihat harga produk</a> ${BTN_ADMIN('Hai LISA Animal Care, saya ingin tanya harga.')}`, quick: ['Lihat layanan', 'Produk'] }) },
   { id: 'booking', kata: ['booking', 'book', 'daftar', 'reservasi', 'janji', 'jadwal', 'antri', 'antre', 'cara booking', 'appointment'],
     jawab: () => ({ html: `<p>Cara booking gampang:</p><ul><li>Isi formulir: cabang, layanan, data kamu dan hewanmu.</li><li>Tekan <strong>Lanjut ke WhatsApp</strong>, lalu kirim pesannya.</li><li>Admin cabang mengonfirmasi jadwalmu.</li></ul>${BTN_BOOKING()}`, quick: ['Lihat layanan', 'Cabang & jam'] }) },
   { id: 'kontak', kata: ['kontak', 'admin', 'whatsapp', 'wa', 'telepon', 'telpon', 'nomor', 'cs', 'email', 'instagram', 'manusia', 'orang'],
