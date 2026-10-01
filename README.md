@@ -11,6 +11,7 @@ Satu repo untuk semua mockup produk. Setiap produk ada di foldernya sendiri dan 
 | `lingkarsatwa/` | Lingkar Satwa Animal Care, klinik hewan dan pet shop di Surabaya | `lingkarsatwa/deploy/` |
 | `umiksopiah/` | Yayasan Umik Sopiah, profil yayasan pendidikan SD dan SMP dengan info PPDB | `umiksopiah.id/deploy/` |
 | `pampimpom/` | Pampimpom, Landing Page Express, pesanan BI-20261001-003 | `pesanan/BI-20261001-003-pampimpom/deploy/` |
+| `mitra-komputer-bersama/` | Mitra Komputer Bersama, Landing Page Express, pesanan BI-20261001-001 | `pesanan/BI-20261001-001-mitra-komputer-bersama/deploy/` |
 
 Semua data di mockup adalah contoh. Jangan masukkan nomor, harga, atau data pribadi asli.
 
