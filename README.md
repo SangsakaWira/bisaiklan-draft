@@ -13,6 +13,7 @@ Satu repo untuk semua mockup produk. Setiap produk ada di foldernya sendiri dan 
 | `pampimpom/` | Pampimpom, Landing Page Express, pesanan BI-20261001-003 | `pesanan/BI-20261001-003-pampimpom/deploy/` |
 | `mitra-komputer-bersama/` | Mitra Komputer Bersama, Landing Page Express, pesanan BI-20261001-001 | `pesanan/BI-20261001-001-mitra-komputer-bersama/deploy/` |
 | `shadowtrois/` | Shadowtrois Project, landing page AC + CCTV + laundry sepatu (project baru) | `projects/shadowtrois/deploy/` |
+| `undangan-wahyu-egy/` | Undangan pernikahan Wahyu & Egy (klien, data dan foto asli dari klien) | `projects/undangan-wahyu-egy/` |
 
 Semua data di mockup adalah contoh. Jangan masukkan nomor, harga, atau data pribadi asli.
 
