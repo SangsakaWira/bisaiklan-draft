@@ -149,6 +149,45 @@ main{position:relative;background:var(--bg);box-shadow:0 0 80px rgba(0,0,0,.6)}
 .g.tall img{object-position:center 65%}
 .g:hover img{transform:scale(1.05)}
 
+/* ucapan & rsvp */
+.ucapan{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.stats{display:flex;justify-content:center;gap:10px;margin:22px 0 6px}
+.stats div{flex:1;max-width:104px;padding:12px 0 8px;border:1px solid rgba(201,164,92,.45);border-radius:10px;background:rgba(58,12,15,.35)}
+.stats span{display:block;font-size:28px;font-weight:600;color:var(--gold-l);line-height:1.1}
+.stats small{font-family:var(--sans);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.wish-form{margin:22px auto 0;max-width:380px;text-align:left;padding:24px 20px;border:1px solid rgba(201,164,92,.4);border-radius:14px;background:rgba(20,11,8,.6)}
+.field{display:block;margin-bottom:16px;border:0}
+.field>span,.field legend{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+.field input[type=text],.field textarea{
+  width:100%;padding:11px 13px;border-radius:8px;border:1px solid rgba(201,164,92,.35);
+  background:rgba(243,231,211,.06);color:var(--cream);font:inherit;font-size:17px;resize:vertical;
+}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:rgba(243,231,211,.1)}
+.field ::placeholder{color:#8a7a66}
+.attend{display:flex;flex-wrap:wrap;gap:8px}
+.attend legend{width:100%}
+.attend label{flex:1;min-width:92px;cursor:pointer}
+.attend input{position:absolute;opacity:0;pointer-events:none}
+.attend span{display:block;text-align:center;padding:9px 6px;border:1px solid rgba(201,164,92,.35);border-radius:8px;font-family:var(--sans);font-size:13px;color:var(--muted);transition:.2s}
+.attend input:checked+span{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#2a150c;border-color:var(--gold)}
+.attend input:focus-visible+span{outline:2px solid var(--gold-l);outline-offset:2px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.form-msg{min-height:1.2em;font-family:var(--sans);font-size:13px;color:var(--gold-l);margin:-4px 0 0}
+.form-msg.err{color:#e79a8f}
+.wish-form .btn{margin-top:10px;width:100%;justify-content:center}
+.wish-form .btn:disabled{opacity:.6;cursor:wait;transform:none}
+.wishes{margin:26px auto 0;max-width:380px;max-height:520px;overflow-y:auto;text-align:left;padding-right:4px}
+.wishes::-webkit-scrollbar{width:4px}
+.wishes::-webkit-scrollbar-thumb{background:rgba(201,164,92,.4);border-radius:4px}
+.wish{padding:14px 16px;margin-bottom:10px;border-radius:10px;background:rgba(243,231,211,.05);border-left:2px solid var(--gold)}
+.wish-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.wish-head strong{font-size:18px;font-weight:600}
+.badge{font-family:var(--sans);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:20px;border:1px solid rgba(201,164,92,.5);color:var(--gold-l)}
+.badge.tidak{border-color:rgba(191,174,149,.4);color:var(--muted)}
+.wish p{margin-top:4px;color:var(--cream);font-size:17px;white-space:pre-line;overflow-wrap:anywhere}
+.wish time{display:block;margin-top:6px;font-family:var(--sans);font-size:11px;color:#8a7a66}
+.empty{text-align:center;color:var(--muted);font-style:italic}
+
 /* penutup */
 .penutup{background:radial-gradient(circle at 50% 100%,rgba(92,21,24,.5),transparent 60%),var(--bg)}
 .turut{margin:40px auto 0;max-width:340px;padding:22px;border-top:1px solid rgba(201,164,92,.35);border-bottom:1px solid rgba(201,164,92,.35)}

@@ -149,6 +149,43 @@
     </div>
   </section>
 
+  <!-- ===== UCAPAN & RSVP ===== -->
+  <section class="section ucapan" id="ucapan">
+    <div class="ornament" aria-hidden="true"></div>
+    <h2 class="title reveal">Ucapan &amp; Doa</h2>
+    <p class="intro reveal">Kirimkan doa dan ucapan untuk kedua mempelai, sekaligus konfirmasi kehadiran Anda.</p>
+
+    <div class="stats reveal" id="stats">
+      <div><span id="st-hadir">0</span><small>Hadir</small></div>
+      <div><span id="st-ragu">0</span><small>Masih Ragu</small></div>
+      <div><span id="st-tidak">0</span><small>Tidak Hadir</small></div>
+    </div>
+
+    <form class="wish-form reveal" id="wishForm" novalidate>
+      <label class="field">
+        <span>Nama</span>
+        <input type="text" name="name" id="wName" maxlength="60" required autocomplete="name" placeholder="Nama Anda">
+      </label>
+      <fieldset class="field attend">
+        <legend>Konfirmasi Kehadiran</legend>
+        <label><input type="radio" name="attendance" value="hadir" required><span>Hadir</span></label>
+        <label><input type="radio" name="attendance" value="ragu"><span>Masih Ragu</span></label>
+        <label><input type="radio" name="attendance" value="tidak"><span>Tidak Hadir</span></label>
+      </fieldset>
+      <label class="field">
+        <span>Ucapan &amp; Doa</span>
+        <textarea name="message" id="wMsg" rows="4" maxlength="500" required placeholder="Tulis ucapan dan doa Anda"></textarea>
+      </label>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-msg" id="formMsg" role="status"></p>
+      <button class="btn" type="submit" id="wSend">Kirim Ucapan</button>
+    </form>
+
+    <div class="wishes" id="wishes" aria-live="polite">
+      <p class="empty">Memuat ucapan…</p>
+    </div>
+  </section>
+
   <!-- ===== PENUTUP ===== -->
   <section class="section penutup">
     <div class="ornament" aria-hidden="true"></div>
