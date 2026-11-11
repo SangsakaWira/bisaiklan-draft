@@ -3,24 +3,41 @@
   var to = new URLSearchParams(location.search).get('to');
   if (to) document.getElementById('guestName').textContent = to.trim().slice(0, 60);
 
-  // musik
-  var music = document.getElementById('music');
+  // musik: audio dari YouTube (Dengarkan Dia - Bersenyawa), pemutar tersembunyi
+  var YT_ID = 'rAkANlCxiEo';
   var musicBtn = document.getElementById('musicBtn');
-  var wantMusic = false;
-  music.addEventListener('loadedmetadata', function () { musicBtn.hidden = false; });
-  if (music.readyState >= 1) musicBtn.hidden = false;
-  function playMusic() {
-    var p = music.play();
-    if (p && p.catch) p.catch(function () {});
-  }
-  music.addEventListener('play', function () { musicBtn.classList.add('playing'); });
-  music.addEventListener('pause', function () { musicBtn.classList.remove('playing'); });
+  var player = null, ready = false, wantMusic = false;
+  function playMusic() { if (ready) player.playVideo(); }
+  window.onYouTubeIframeAPIReady = function () {
+    player = new YT.Player('ytPlayer', {
+      width: 200, height: 200, videoId: YT_ID,
+      host: 'https://www.youtube-nocookie.com',
+      playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: YT_ID, playsinline: 1, rel: 0, disablekb: 1, fs: 0 },
+      events: {
+        onReady: function () {
+          ready = true;
+          player.setVolume(70);
+          musicBtn.hidden = false;
+          if (wantMusic) playMusic();
+        },
+        onStateChange: function (e) {
+          musicBtn.classList.toggle('playing', e.data === YT.PlayerState.PLAYING);
+          if (e.data === YT.PlayerState.ENDED) { player.seekTo(0); player.playVideo(); }
+        }
+      }
+    });
+  };
+  var yt = document.createElement('script');
+  yt.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(yt);
   musicBtn.addEventListener('click', function () {
-    wantMusic = music.paused;
-    if (wantMusic) playMusic(); else music.pause();
+    if (!ready) return;
+    wantMusic = player.getPlayerState() !== YT.PlayerState.PLAYING;
+    if (wantMusic) playMusic(); else player.pauseVideo();
   });
   document.addEventListener('visibilitychange', function () {
-    if (document.hidden) music.pause(); else if (wantMusic) playMusic();
+    if (!ready) return;
+    if (document.hidden) player.pauseVideo(); else if (wantMusic) playMusic();
   });
 
   // open invitation
