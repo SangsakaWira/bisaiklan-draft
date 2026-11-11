@@ -3,8 +3,8 @@
   var to = new URLSearchParams(location.search).get('to');
   if (to) document.getElementById('guestName').textContent = to.trim().slice(0, 60);
 
-  // musik: audio dari YouTube (Dengarkan Dia - Bersenyawa), pemutar tersembunyi
-  var YT_ID = 'rAkANlCxiEo';
+  // musik: audio dari YouTube (Guns N' Roses - Welcome to the Jungle), pemutar tersembunyi
+  var YT_ID = 'o1tj2zJ2Wvg';
   var musicBtn = document.getElementById('musicBtn');
   var player = null, ready = false, wantMusic = false;
   function playMusic() { if (ready) player.playVideo(); }
