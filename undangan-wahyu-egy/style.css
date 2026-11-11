@@ -90,6 +90,35 @@ main{position:relative;background:var(--grain),var(--black);box-shadow:0 0 80px 
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 45%;filter:saturate(.85) contrast(1.08)}
 .hero-shade{position:absolute;inset:0;background:var(--grain),linear-gradient(180deg,rgba(11,7,7,.1) 35%,rgba(94,10,16,.35) 65%,var(--black) 100%)}
 .hero-inner{position:relative;padding-bottom:64px}
+
+/* lampu panggung di foto utama */
+.lights{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.beam{
+  position:absolute;top:-6%;width:46%;height:120%;transform-origin:50% 0;mix-blend-mode:screen;filter:blur(10px);opacity:.55;
+  clip-path:polygon(46% 0,54% 0,100% 100%,0 100%);
+  animation:sweep 7s ease-in-out infinite alternate;
+}
+.b1{left:-12%;background:linear-gradient(180deg,rgba(255,40,50,.85),rgba(255,40,50,.18) 30%,transparent 55%);--from:-28deg;--to:18deg}
+.b2{left:16%;background:linear-gradient(180deg,rgba(255,200,110,.75),rgba(255,200,110,.14) 30%,transparent 55%);--from:22deg;--to:-14deg;animation-duration:9s}
+.b3{left:40%;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.08) 30%,transparent 50%);--from:-16deg;--to:24deg;animation-duration:8s;animation-delay:-3s}
+.b4{left:66%;background:linear-gradient(180deg,rgba(255,40,50,.85),rgba(255,40,50,.18) 30%,transparent 55%);--from:26deg;--to:-20deg;animation-duration:6.5s;animation-delay:-2s}
+@keyframes sweep{from{transform:rotate(var(--from))}to{transform:rotate(var(--to))}}
+.lamp{position:absolute;top:-14px;width:44px;height:28px;border-radius:50%;mix-blend-mode:screen;animation:blink 3.2s ease-in-out infinite}
+.l1{left:11%;background:radial-gradient(ellipse,#fff 0 18%,rgba(255,60,60,.9) 35%,transparent 70%)}
+.l2{left:37%;background:radial-gradient(ellipse,#fff 0 18%,rgba(255,200,110,.9) 35%,transparent 70%);animation-delay:-.8s}
+.l3{left:61%;background:radial-gradient(ellipse,#fff 0 22%,rgba(255,255,255,.7) 40%,transparent 70%);animation-delay:-1.6s}
+.l4{left:86%;background:radial-gradient(ellipse,#fff 0 18%,rgba(255,60,60,.9) 35%,transparent 70%);animation-delay:-2.4s}
+@keyframes blink{0%,100%{opacity:.75}50%{opacity:1}}
+.haze{position:absolute;left:-30%;right:-30%;bottom:8%;height:55%;mix-blend-mode:screen;opacity:.35;
+  background:radial-gradient(ellipse 40% 50% at 30% 60%,rgba(255,180,180,.35),transparent 70%),radial-gradient(ellipse 45% 40% at 70% 50%,rgba(255,220,180,.28),transparent 70%);
+  animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+.dust{position:absolute;inset:0;mix-blend-mode:screen;opacity:.5;
+  background-image:radial-gradient(circle,rgba(255,240,220,.9) 0 1px,transparent 1.5px),radial-gradient(circle,rgba(255,200,200,.7) 0 1px,transparent 1.5px);
+  background-size:90px 110px,130px 150px;background-position:0 0,40px 60px;animation:float 18s linear infinite}
+@keyframes float{to{background-position:0 -440px,40px -540px}}
+.flash{position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 12%,rgba(255,255,255,.5),transparent 70%);mix-blend-mode:screen;opacity:0;animation:strobe 9s ease-out infinite}
+@keyframes strobe{0%,86%,100%{opacity:0}88%{opacity:.9}90%{opacity:.1}92%{opacity:.7}96%{opacity:0}}
 .giant{font-size:76px;text-shadow:0 4px 0 var(--blood),0 0 30px rgba(0,0,0,.8)}
 .giant span{display:inline-block;font-size:.55em;color:var(--red-l);margin:0 6px;vertical-align:middle}
 .hero-date{font-family:var(--caps);font-size:14px;letter-spacing:.24em;text-transform:uppercase;margin-top:8px}
@@ -240,4 +269,6 @@ main{position:relative;background:var(--grain),var(--black);box-shadow:0 0 80px 
   .cover .wordmark,.cover-date,.cover h1,.guest,.cover .btn{animation:none}
   .curtain,.valance{transition-duration:.01s}
   .music-btn.playing{animation:none}
+  .beam,.lamp,.haze,.dust{animation:none}
+  .flash{display:none}
 }
