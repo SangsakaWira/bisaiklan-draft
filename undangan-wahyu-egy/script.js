@@ -3,8 +3,8 @@
   var to = new URLSearchParams(location.search).get('to');
   if (to) document.querySelectorAll('#guestName, [data-guest]').forEach(function (n) { n.textContent = to.trim().slice(0, 60); });
 
-  // musik: audio dari YouTube (Guns N' Roses - Welcome to the Jungle), pemutar tersembunyi
-  var YT_ID = 'o1tj2zJ2Wvg';
+  // musik: audio resmi YouTube (Guns N' Roses - Welcome to the Jungle, album Appetite For Destruction; langsung intro gitar)
+  var YT_ID = '0CNPR2qNzxk';
   var musicBtn = document.getElementById('musicBtn');
   var player = null, ready = false, wantMusic = false;
   function playMusic() { if (ready) player.playVideo(); }
