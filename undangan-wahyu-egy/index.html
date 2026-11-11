@@ -211,6 +211,12 @@
 </main>
 
 <!-- lightbox -->
+<!-- musik: tombol muncul hanya jika file lagu tersedia -->
+<audio id="music" src="audio/dengarkan-dia.mp3" preload="metadata" loop></audio>
+<button type="button" class="music-btn" id="musicBtn" aria-label="Putar atau jeda musik" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+</button>
+
 <div class="lightbox" id="lightbox" hidden>
   <button type="button" class="lb-close" aria-label="Tutup">&times;</button>
   <img alt="">

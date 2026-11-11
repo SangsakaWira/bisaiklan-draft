@@ -3,9 +3,31 @@
   var to = new URLSearchParams(location.search).get('to');
   if (to) document.getElementById('guestName').textContent = to.trim().slice(0, 60);
 
+  // musik
+  var music = document.getElementById('music');
+  var musicBtn = document.getElementById('musicBtn');
+  var wantMusic = false;
+  music.addEventListener('loadedmetadata', function () { musicBtn.hidden = false; });
+  if (music.readyState >= 1) musicBtn.hidden = false;
+  function playMusic() {
+    var p = music.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  music.addEventListener('play', function () { musicBtn.classList.add('playing'); });
+  music.addEventListener('pause', function () { musicBtn.classList.remove('playing'); });
+  musicBtn.addEventListener('click', function () {
+    wantMusic = music.paused;
+    if (wantMusic) playMusic(); else music.pause();
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) music.pause(); else if (wantMusic) playMusic();
+  });
+
   // open invitation
   var cover = document.getElementById('cover');
   document.getElementById('openBtn').addEventListener('click', function () {
+    wantMusic = true;
+    playMusic();
     cover.classList.add('open');
     document.body.classList.remove('locked');
     window.scrollTo(0, 0);

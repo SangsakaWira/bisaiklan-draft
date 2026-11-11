@@ -213,3 +213,11 @@ main{position:relative;background:var(--bg);box-shadow:0 0 80px rgba(0,0,0,.6)}
   .reveal{opacity:1;transform:none;transition:none}
   .cover-bg{animation:none}
 }
+
+/* musik */
+.music-btn{position:fixed;right:max(16px,calc(50vw - 224px));bottom:20px;z-index:45;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid var(--gold);background:rgba(20,11,8,.85);color:var(--gold-l);box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.music-btn[hidden]{display:none}
+.music-btn svg{width:20px;height:20px}
+.music-btn.playing{animation:spin 4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.music-btn.playing{animation:none}}
