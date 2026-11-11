@@ -110,6 +110,19 @@ main{position:relative;background:var(--bg);box-shadow:0 0 80px rgba(0,0,0,.6)}
 .parent strong{color:var(--cream);font-weight:500}
 .and{font-size:72px;margin-top:30px}
 
+/* love story */
+.story{background:var(--bg)}
+.timeline{list-style:none;margin:30px auto 0;max-width:380px;text-align:left;position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,transparent,var(--gold) 6%,var(--gold) 94%,transparent)}
+.timeline li{position:relative;margin-bottom:34px}
+.timeline li:last-child{margin-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-27px;top:5px;width:11px;height:11px;transform:rotate(45deg);background:var(--bg);border:1px solid var(--gold);box-shadow:0 0 0 4px var(--bg)}
+.t-date{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.t-title{font-size:38px;margin:0 0 6px}
+.timeline li>p:not(.t-date){font-size:17px;color:var(--cream);margin-bottom:10px}
+.timeline blockquote{margin-top:14px;padding:14px 16px;border-left:2px solid var(--gold);font-style:italic;font-size:18px;color:var(--gold-l);background:rgba(201,164,92,.07);border-radius:0 8px 8px 0}
+.timeline cite{display:block;margin-top:6px;font-family:var(--sans);font-style:normal;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
 /* countdown */
 .countdown-wrap{overflow:hidden;padding:110px 24px}
 .cd-bg{position:absolute;inset:0;background-size:cover;background-position:center 70%}
