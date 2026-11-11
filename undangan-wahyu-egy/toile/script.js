@@ -89,6 +89,23 @@
   lb.addEventListener('click', function () { lb.hidden = true; lbImg.src = ''; });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.click(); });
 
+  // salin nomor rekening
+  document.querySelectorAll('.copy-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.dataset.copy, label = b.textContent;
+      function done() { b.textContent = 'Tersalin ✓'; setTimeout(function () { b.textContent = label; }, 1800); }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else fallback();
+      function fallback() {
+        var t = document.createElement('textarea'); t.value = text; t.setAttribute('readonly', '');
+        t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); done(); } catch (e) { b.textContent = text; }
+        t.remove();
+      }
+    });
+  });
+
   // ucapan & rsvp
   var API = 'https://undangan-api.bisaiklan.online/wishes/wahyu-egy';
   var LABEL = { hadir: 'Hadir', ragu: 'Masih Ragu', tidak: 'Tidak Hadir' };
