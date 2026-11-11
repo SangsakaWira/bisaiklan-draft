@@ -87,7 +87,7 @@ main{position:relative;background:var(--grain),var(--black);box-shadow:0 0 80px 
 
 /* ===== hero ===== */
 .hero{position:relative;height:100svh;min-height:560px;display:flex;align-items:flex-end;justify-content:center;text-align:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(.5) contrast(1.15)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 45%;filter:saturate(.85) contrast(1.08)}
 .hero-shade{position:absolute;inset:0;background:var(--grain),linear-gradient(180deg,rgba(11,7,7,.1) 35%,rgba(94,10,16,.35) 65%,var(--black) 100%)}
 .hero-inner{position:relative;padding-bottom:64px}
 .giant{font-size:76px;text-shadow:0 4px 0 var(--blood),0 0 30px rgba(0,0,0,.8)}
