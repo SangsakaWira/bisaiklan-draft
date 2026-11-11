@@ -48,7 +48,7 @@
     cover.classList.add('open');
     document.body.classList.remove('locked');
     window.scrollTo(0, 0);
-    setTimeout(function () { cover.style.display = 'none'; }, 3000);
+    setTimeout(function () { cover.style.display = 'none'; }, 9000);
   });
 
   // countdown to akad: Sabtu 12 Des 2026 16:00 WIB
