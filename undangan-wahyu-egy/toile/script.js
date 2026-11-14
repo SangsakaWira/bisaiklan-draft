@@ -3,52 +3,32 @@
   var to = new URLSearchParams(location.search).get('to');
   if (to) document.getElementById('guestName').textContent = to.trim().slice(0, 60);
 
-  // musik: audio dari YouTube (Dengarkan Dia - Bersenyawa), pemutar tersembunyi
-  var YT_ID = 'rAkANlCxiEo';
+  // musik: file MP3 (Dengarkan Dia - Bersenyawa)
+  var music = document.getElementById('music');
   var musicBtn = document.getElementById('musicBtn');
-  var player = null, ready = false, wantMusic = false, unlocked = false, unlockTime = 0;
-  function playMusic() { if (!ready) return; if (unlocked) player.unMute(); player.playVideo(); }
-  // Browser melarang lagu bersuara sebelum ada sentuhan. Jadi lagu diputar tanpa suara
-  // sejak halaman dibuka, lalu suara dinyalakan (dari awal lagu) pada sentuhan pertama.
+  var wantMusic = false, unlocked = false, unlockTime = 0;
+  music.volume = 0.8;
+  function playMusic() { var p = music.play(); if (p && p.catch) p.catch(function () {}); }
+  // Browser melarang lagu bersuara sebelum ada sentuhan: coba putar langsung,
+  // dan pada sentuhan pertama di mana saja lagu diputar dari awal.
   function unlock() {
     if (unlocked) return;
     unlocked = true; unlockTime = Date.now(); wantMusic = true;
-    if (ready) { player.seekTo(0, true); player.unMute(); player.setVolume(70); player.playVideo(); }
+    music.currentTime = 0; playMusic();
   }
   ['pointerdown', 'touchend', 'keydown'].forEach(function (ev) {
     document.addEventListener(ev, unlock, { capture: true, passive: true });
   });
-  window.onYouTubeIframeAPIReady = function () {
-    player = new YT.Player('ytPlayer', {
-      width: 200, height: 200, videoId: YT_ID,
-      host: 'https://www.youtube-nocookie.com',
-      playerVars: { autoplay: 0, controls: 0, loop: 1, playlist: YT_ID, playsinline: 1, rel: 0, disablekb: 1, fs: 0 },
-      events: {
-        onReady: function () {
-          ready = true;
-          player.setVolume(70);
-          musicBtn.hidden = false;
-          if (unlocked) { player.unMute(); player.playVideo(); }
-          else { player.mute(); player.playVideo(); }
-        },
-        onStateChange: function (e) {
-          musicBtn.classList.toggle('playing', unlocked && e.data === YT.PlayerState.PLAYING);
-          if (e.data === YT.PlayerState.ENDED) { player.seekTo(0); player.playVideo(); }
-        }
-      }
-    });
-  };
-  var yt = document.createElement('script');
-  yt.src = 'https://www.youtube.com/iframe_api';
-  document.head.appendChild(yt);
+  playMusic();
+  music.addEventListener('play', function () { musicBtn.classList.add('playing'); });
+  music.addEventListener('pause', function () { musicBtn.classList.remove('playing'); });
   musicBtn.addEventListener('click', function () {
-    if (!ready || Date.now() - unlockTime < 500) return;
-    wantMusic = player.getPlayerState() !== YT.PlayerState.PLAYING;
-    if (wantMusic) playMusic(); else player.pauseVideo();
+    if (Date.now() - unlockTime < 500) return;
+    wantMusic = music.paused;
+    if (wantMusic) playMusic(); else music.pause();
   });
   document.addEventListener('visibilitychange', function () {
-    if (!ready) return;
-    if (document.hidden) player.pauseVideo(); else if (wantMusic) playMusic();
+    if (document.hidden) music.pause(); else if (wantMusic) playMusic();
   });
 
   // open invitation
