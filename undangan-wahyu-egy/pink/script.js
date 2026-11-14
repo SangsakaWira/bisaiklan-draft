@@ -52,8 +52,18 @@
   // musik: audio dari YouTube (Dengarkan Dia - Bersenyawa), pemutar tersembunyi
   var YT_ID = 'rAkANlCxiEo';
   var musicBtn = document.getElementById('musicBtn');
-  var player = null, ready = false, wantMusic = false;
-  function playMusic() { if (ready) player.playVideo(); }
+  var player = null, ready = false, wantMusic = false, unlocked = false, unlockTime = 0;
+  function playMusic() { if (!ready) return; if (unlocked) player.unMute(); player.playVideo(); }
+  // Browser melarang lagu bersuara sebelum ada sentuhan. Jadi lagu diputar tanpa suara
+  // sejak halaman dibuka, lalu suara dinyalakan (dari awal lagu) pada sentuhan pertama.
+  function unlock() {
+    if (unlocked) return;
+    unlocked = true; unlockTime = Date.now(); wantMusic = true;
+    if (ready) { player.seekTo(0, true); player.unMute(); player.setVolume(70); player.playVideo(); }
+  }
+  ['pointerdown', 'touchend', 'keydown'].forEach(function (ev) {
+    document.addEventListener(ev, unlock, { capture: true, passive: true });
+  });
   window.onYouTubeIframeAPIReady = function () {
     player = new YT.Player('ytPlayer', {
       width: 200, height: 200, videoId: YT_ID,
@@ -64,10 +74,11 @@
           ready = true;
           player.setVolume(70);
           musicBtn.hidden = false;
-          if (wantMusic) playMusic();
+          if (unlocked) { player.unMute(); player.playVideo(); }
+          else { player.mute(); player.playVideo(); }
         },
         onStateChange: function (e) {
-          musicBtn.classList.toggle('playing', e.data === YT.PlayerState.PLAYING);
+          musicBtn.classList.toggle('playing', unlocked && e.data === YT.PlayerState.PLAYING);
           if (e.data === YT.PlayerState.ENDED) { player.seekTo(0); player.playVideo(); }
         }
       }
@@ -77,7 +88,7 @@
   yt.src = 'https://www.youtube.com/iframe_api';
   document.head.appendChild(yt);
   musicBtn.addEventListener('click', function () {
-    if (!ready) return;
+    if (!ready || Date.now() - unlockTime < 500) return;
     wantMusic = player.getPlayerState() !== YT.PlayerState.PLAYING;
     if (wantMusic) playMusic(); else player.pauseVideo();
   });
